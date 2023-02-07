@@ -1,9 +1,9 @@
-
+import Header from "../Components/Header";
 
 function Home () {
     return (
         <>
-            Where na you?I'm Home..
+            <Header></Header>
         </>
     )
 }
