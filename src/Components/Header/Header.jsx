@@ -1,7 +1,8 @@
 
 import {MDBBtn} from 'mdb-react-ui-kit';
+import "./header.css"
 
-function Header () {
+export default function Header () {
     return (
         <div
         className='p-5 text-center bg-image'
@@ -14,6 +15,7 @@ function Header () {
               <h4 className='mb-3'>Subheading</h4>
               <MDBBtn outline className='mx-2'color='light'>
                      Dark
+                     <div className='sample'></div>
                 </MDBBtn>
             </div>
           </div>
@@ -21,4 +23,5 @@ function Header () {
       </div>
     )
 }
-export default Header;
+
+///============[Oarallax Scripts]============//

@@ -9,13 +9,11 @@ import {
   MDBNavbarItem,
   MDBNavbarLink,
   MDBBtn,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
   MDBCollapse,
 } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
+
+import logo from "../assets/logo-weed-with.png";
 
  function Navbar() {
   const [showBasic, setShowBasic] = useState(false);
@@ -24,7 +22,14 @@ import { Link } from 'react-router-dom';
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
         <Link to='/'>
-        <MDBNavbarBrand>Plantitos</MDBNavbarBrand>
+        <MDBNavbarBrand>
+        <img
+          src={logo}
+          height="60"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+        </MDBNavbarBrand>
         </Link>
         <MDBNavbarToggler
           aria-controls='navbarSupportedContent'
