@@ -8,6 +8,8 @@ import Contact from './Pages/Contact';
 import Shop from './Pages/Shop';
 import Home from './Pages/Home';
 import Searchpage from './Pages/Searchpage';
+import Login from './Pages/authentication/Login';
+import BasicLayout from './Layouts/BasicLayout';
 
 function App() {
 
@@ -22,6 +24,10 @@ function App() {
           <Route path='/shop' element={<Shop/>} />
           <Route path='/searchpage' element={<Searchpage/>} />
         </Route>
+        <Route element={<BasicLayout/>} >
+         
+       <Route path='/login' element={<Login/>} />
+       </Route>
         <Route path='*' element={<Error404/>} />
       </Routes>
     </>

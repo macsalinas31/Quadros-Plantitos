@@ -2,13 +2,12 @@ import { Outlet } from "react-router-dom"
 import Footer from "../Components/Footer"
 
 
-function Mainlayout() {
+export default function BasicLayout() {
     return (
         <>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
 
     )
-}
-export default Mainlayout;
+    }
