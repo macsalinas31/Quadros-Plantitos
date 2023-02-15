@@ -4,3 +4,12 @@
     background-color: aquamarine;
     content: "";
 }
+.custom-btn {
+    box-shadow: none;
+}
+.custom-btn:hover {
+    box-shadow: none;
+    background-color: #c0917f !important;
+
+   
+}
