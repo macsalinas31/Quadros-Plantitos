@@ -13,10 +13,7 @@ export default function Header () {
             <div className='text-white'>
               <h1 className='mb-3'>Heading</h1>
               <h4 className='mb-3'>Subheading</h4>
-              <MDBBtn outline className='mx-2'color='light'>
-                     Dark
-                     <div className='sample'></div>
-                </MDBBtn>
+            
             </div>
           </div>
         </div>
