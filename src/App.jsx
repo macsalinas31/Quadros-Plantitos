@@ -10,6 +10,7 @@ import Home from './Pages/Home';
 import Searchpage from './Pages/Searchpage';
 import Login from './Pages/authentication/Login';
 import BasicLayout from './Layouts/BasicLayout';
+import Register from './Pages/authentication/Register';
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
         <Route element={<BasicLayout/>} >
          
        <Route path='/login' element={<Login/>} />
+       <Route path='/register' element={<Register/>} />
+
        </Route>
         <Route path='*' element={<Error404/>} />
       </Routes>
