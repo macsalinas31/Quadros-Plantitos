@@ -1,19 +1,24 @@
 
-import {MDBBtn} from 'mdb-react-ui-kit';
+import { MDBBtn, MDBTypography } from 'mdb-react-ui-kit';
 import "./header.css"
+import headerImage from '../../assets/header-image-plants.jpg';
 
 export default function Header () {
     return (
         <div
-        className='p-5 text-center bg-image'
-        style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/624b3c6dbfcb28795baabd33/1649097860294-ZW36VSRKLLBG3A4K2KAU/Header_02_022-copy.jpg?format=2500w')", height: '800px' }}
+        className='p-5 text-center bg-image container' 
+        style={{ backgroundImage: "url("+headerImage+")", height: '800px', backgroundPosition: 'bottom'}}
       >
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }}>
           <div className='d-flex justify-content-center align-items-center h-100'>
-            <div className='text-white'>
-              <h1 className='mb-3'>Heading</h1>
-              <h4 className='mb-3'>Subheading</h4>
-            
+            <div className='text-black'>
+              <MDBTypography  tag='div' className='display-3 pb-3 mb-3 border-bottom'>Being Green,<br/>Staying Clean.</MDBTypography>
+              <MDBTypography blockquote className='mb-3'>Plants are nature's way of showing us that great things can grow from small beginnings.</MDBTypography>
+              
+              <MDBBtn rounded className='mx-2 custom-btn'style={{backgroundColor: '#B77445'}}>
+                 Shop plants
+              </MDBBtn>
+
             </div>
           </div>
         </div>

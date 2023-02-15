@@ -12,7 +12,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-export default function ForgotPassword() {
+export default function ResetPassword() {
   return (
     <MDBContainer fluid>
       <MDBRow>
@@ -27,15 +27,14 @@ export default function ForgotPassword() {
 
           <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
 
-            <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Forgot Password</h3>
+            <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Reset Password</h3>
 
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-            
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='New Password' id='formControlLg' type='password' size="lg"/>
+            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Confirm Password' id='formControlLg' type='password' size="lg"/>
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Continue</MDBBtn>
+            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Reset Password</MDBBtn>
           
-            <p className='ms-5'> <a href="#!" class="link-success">Back to sign in.</a></p>
-
+           
           </div>
           </MDBCol>
           </MDBRow>
