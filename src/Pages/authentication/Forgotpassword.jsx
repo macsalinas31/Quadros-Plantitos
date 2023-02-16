@@ -34,7 +34,7 @@ export default function ForgotPassword() {
 
             <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Continue</MDBBtn>
           
-            <p className='ms-5'> <a href="#!" class="link-success">Back to sign in.</a></p>
+            <p className='ms-5'> <a href="/login" class="link-success">Back to sign in.</a></p>
 
           </div>
           </MDBCol>

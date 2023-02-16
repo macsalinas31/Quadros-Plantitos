@@ -51,7 +51,7 @@ function Register() {
             </div>
             <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Sign Up</MDBBtn>
             
-            <p className='ms-5'>Already registered? <a href="#!" class="link-success">Login here</a></p>
+            <p className='ms-5'>Already registered? <a href="/login" class="link-success">Login here</a></p>
 
           </div>
           </MDBCol>
