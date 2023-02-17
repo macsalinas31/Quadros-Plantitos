@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -12,7 +13,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBInput,
   MDBCheckbox
 }
@@ -94,7 +94,7 @@ function Register() {
             }
             </form>
             
-            <p className='ms-5'>Already registered? <a href="/login" className="link-custom">Login here</a></p>
+            <p className='ms-5'>Already registered? <Link to="/login" className="link-custom">Login here</Link></p>
 
           </div>
           </MDBCol>

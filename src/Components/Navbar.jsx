@@ -29,7 +29,7 @@ function Navbar() {
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer>
         <Link to="/" className="order-1 order-lg-1">
-          <MDBNavbarBrand>
+          <MDBNavbarBrand tag="div">
             <img src={logo} height="60" alt="MDB Logo" loading="lazy" />
           </MDBNavbarBrand>
         </Link>
@@ -52,17 +52,17 @@ function Navbar() {
           >
             <Link to="/shop">
               <MDBNavbarItem>
-                <MDBNavbarLink>Shop</MDBNavbarLink>
+                <MDBNavbarLink tag="div">Shop</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
             <Link to="/journal">
               <MDBNavbarItem>
-                <MDBNavbarLink>Journal</MDBNavbarLink>
+                <MDBNavbarLink tag="div">Journal</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
             <Link to="/contact">
               <MDBNavbarItem>
-                <MDBNavbarLink>Contact Us</MDBNavbarLink>
+                <MDBNavbarLink tag="div">Contact Us</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
           </MDBNavbarNav>
@@ -70,7 +70,7 @@ function Navbar() {
         <form className="d-flex flex-nowrap input-group w-auto order-2 order-lg-4">
           <Link to="/searchpage">
             <MDBBtn
-              tag="a"
+              tag="div"
               color="none"
               className="mx-3"
               style={{ color: "#B77445", margin: "0px 20px" }}
@@ -80,7 +80,7 @@ function Navbar() {
           </Link>
           <Link to="/mycart">
             <MDBBtn
-              tag="a"
+              tag="div"
               color="none"
               className="mx-3"
               style={{ color: "#B77445" }}

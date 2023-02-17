@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import {
   MDBContainer,
   MDBRow,
@@ -6,8 +6,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-  MDBIcon,
-  MDBBtn,
   MDBRipple,
 } from "mdb-react-ui-kit";
 
@@ -32,7 +30,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
@@ -46,15 +44,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">$61.99</h6>
               </MDBCardBody>
             </MDBCard>
@@ -71,7 +69,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
@@ -85,15 +83,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">$61.99</h6>
               </MDBCardBody>
             </MDBCard>
@@ -110,7 +108,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
@@ -124,15 +122,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">
                   <s>$61.99</s>
                   <strong className="ms-2 text-danger">$50.99</strong>
@@ -152,7 +150,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
@@ -167,15 +165,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">
                   <s>$61.99</s>
                   <strong className="ms-2 text-danger">$50.99</strong>
@@ -195,7 +193,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100"></div>
                   </div>
@@ -205,15 +203,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">$61.99</h6>
               </MDBCardBody>
             </MDBCard>
@@ -230,7 +228,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <a href="#!">
+                <Link to="#!">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
@@ -246,15 +244,15 @@ function Shop () {
                       style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </MDBRipple>
               <MDBCardBody>
-                <a href="#!" className="text-reset">
+                <Link to="#!" className="text-reset">
                   <h5 className="card-title mb-3">Product name</h5>
-                </a>
-                <a href="#!" className="text-reset">
+                </Link>
+                <Link to="#!" className="text-reset">
                   <p>Category</p>
-                </a>
+                </Link>
                 <h6 className="mb-3">
                   <s>$61.99</s>
                   <strong className="ms-2 text-danger">$50.99</strong>

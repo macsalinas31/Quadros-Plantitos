@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import {
     MDBBtn,
     MDBCard,
@@ -39,10 +41,10 @@ import {
                       <img
                         src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
                         className="w-100" />
-                      <a href="#!">
+                      <Link to="">
                         <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" , }}>
                         </div>
-                      </a>
+                      </Link>
                     </MDBRipple>
                   </MDBCol>
     
