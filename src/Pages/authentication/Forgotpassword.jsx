@@ -2,6 +2,7 @@ import React from 'react';
 import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
+import { Link } from 'react-router-dom';
 import {
   MDBBtn,
   MDBContainer,
@@ -32,9 +33,9 @@ export default function ForgotPassword() {
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
             
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Continue</MDBBtn>
+            <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
           
-            <p className='ms-5'> <a href="/login" class="link-success">Back to sign in.</a></p>
+            <p className='ms-5'> <Link to="/login" className="link-custom">Back to sign in.</Link></p>
 
           </div>
           </MDBCol>

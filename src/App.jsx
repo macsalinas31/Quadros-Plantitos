@@ -1,11 +1,14 @@
-import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import { Routes, Route, Link } from "react-router-dom";
+
+// Layout
 import Mainlayout from "./Layouts/Mainlayout";
+
+// Pages
 import Error404 from "./Pages/Error404";
 import Journal from "./Pages/Journal";
 import Contact from "./Pages/Contact";
-import Shop from "./Pages/Shop";
+import Shop from "./Pages/Shop/Shop";
 import Home from "./Pages/Home";
 import Searchpage from "./Pages/Searchpage";
 import Login from "./Pages/authentication/Login";
@@ -13,6 +16,12 @@ import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
 import ForgotPassword from "./Pages/authentication/ForgotPassword";
 import ResetPassword from "./Pages/authentication/ResetPassword";
+import Cart from "./Pages/Shop/Cart";
+
+// CSS import
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./App.css";
 
 function App() {
   return (
@@ -24,6 +33,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/searchpage" element={<Searchpage />} />
+          <Route path="/mycart" element={<Cart/>} />
         </Route>
         <Route element={<BasicLayout />}>
           <Route path="/login" element={<Login />} />

@@ -1,7 +1,14 @@
+// react imports
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+// assets and css
 import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
+
+// MDBootstrap
 import {
   MDBBtn,
   MDBContainer,
@@ -13,6 +20,12 @@ import {
 from 'mdb-react-ui-kit';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/"); 
+  }
+
   return (
     <MDBContainer fluid>
       <MDBRow>
@@ -32,9 +45,9 @@ export default function Login() {
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Login</MDBBtn>
-            <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="/forgotPassword">Forgot password?</a></p>
-            <p className='ms-5'>Don't have an account? <a href="/register" class="link-success">Register here</a></p>
+            <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg' onClick={handleLogin}>Login</MDBBtn>
+            <p className="small mb-5 pb-lg-3 ms-5"><Link class="text-muted" to="/forgotPassword">Forgot password?</Link></p>
+            <p className='ms-5'>Don't have an account? <Link to="/register" class="link-custom">Register here</Link></p>
 
           </div>
           </MDBCol>

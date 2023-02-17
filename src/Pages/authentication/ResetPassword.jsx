@@ -2,6 +2,7 @@ import React from 'react';
 import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
+import { Link } from 'react-router-dom';
 import {
   MDBBtn,
   MDBContainer,
@@ -32,7 +33,8 @@ export default function ResetPassword() {
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='New Password' id='formControlLg' type='password' size="lg"/>
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Confirm Password' id='formControlLg' type='password' size="lg"/>
 
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='success' size='lg'>Reset Password</MDBBtn>
+            <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Reset Password</MDBBtn>
+            <p className='ms-5'> <Link to="/login" className="link-custom">Back to sign in.</Link></p>
           
            
           </div>

@@ -13,7 +13,7 @@ import '../Css/journal.css'
 export default function Journal() {
   return (
 
-    <div className="container" >
+    <div className="container my-5" >
         <div className="row">
             <div className='col-4'>
                 <MDBCard className="box-border">
