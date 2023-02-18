@@ -40,7 +40,7 @@ function App() {
         <Route element={<BasicLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
         
         </Route>
