@@ -80,7 +80,7 @@ export default function AboutUs() {
           <div className="steps__card">
             <div className="steps__card-number">03</div>
             <h3 className="steps__card-title">Get plants delivered</h3>
-            <p className="steps__card-description">
+            <p className="steps__card-description step__3">
                 Our delivery process is easy, you receive the plant direct to your door.
             </p>
         </div>
