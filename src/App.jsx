@@ -22,6 +22,7 @@ import Cart from "./Pages/Shop/Cart";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
+import JournalEntry from "./Pages/JournalEntry";
 
 function App() {
   return (
@@ -34,12 +35,14 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/searchpage" element={<Searchpage />} />
           <Route path="/mycart" element={<Cart/>} />
+          <Route path="/journalentry" element={<JournalEntry/>}></Route>
         </Route>
         <Route element={<BasicLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
+        
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

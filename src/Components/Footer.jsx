@@ -20,7 +20,7 @@ function Footer() {
           <Link to='https://www.facebook.com/itsmemac31/' target="_blank" className='me-4 text-reset'>
             <MDBIcon fab icon="google" />
           </Link>
-          <Link to='https://www.facebook.com/itsmemac31/' target="_blank" className='me-4 text-reset'>
+          <Link to='https://www.instagram.com/macslns/' target="_blank" className='me-4 text-reset'>
             <MDBIcon fab icon="instagram" />
           </Link>
           <Link to='https://www.facebook.com/itsmemac31/' target="_blank" className='me-4 text-reset'>
