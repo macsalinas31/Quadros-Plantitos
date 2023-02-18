@@ -1,6 +1,7 @@
 import { MDBContainer, MDBRow, MDBCol, MDBTypography } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import succ from "../assets/succ.jpg";
+import "../Css/aboutus.css";
 
 export default function AboutUs() {
   return (
@@ -47,6 +48,44 @@ export default function AboutUs() {
           </div>
         </MDBCol>
       </MDBRow>
+      <div className="con-center">
+      <MDBRow className="row__2 col-12">
+      
+        
+        <MDBCol md="12">
+          <h2 className="title-center steps_title">
+            Steps to start your <br /> plants off right
+          </h2>
+          </MDBCol>
+          <MDBCol className="mb-7" sm="12" lg="4" >
+          <div className="steps__card">
+          <div className="steps__card-number">01</div>
+            <h3 className="steps__card-title">Choose Plant</h3>
+            <p className="steps__card-description">
+                We have several varieties plants you can choose from.
+            </p>
+          </div>
+          </MDBCol>
+          <MDBCol className="mb-7  step__2" sm="12" lg="4">
+          <div className="steps__card">
+              <div className="steps__card-number">02</div>
+              <h3 className="steps__card-title">Place an order</h3>
+              <p className="steps__card-description">
+                  Once your order is set, we move to the next step which is the shipping.
+              </p>
+          </div>
+          </MDBCol>
+          <MDBCol className="mb-7" sm="12" lg="4" >
+          <div className="steps__card">
+            <div className="steps__card-number">03</div>
+            <h3 className="steps__card-title">Get plants delivered</h3>
+            <p className="steps__card-description">
+                Our delivery process is easy, you receive the plant direct to your door.
+            </p>
+        </div>
+        </MDBCol>
+      </MDBRow>
+</div>
     </MDBContainer>
   );
 }
