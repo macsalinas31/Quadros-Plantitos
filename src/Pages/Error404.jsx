@@ -1,23 +1,22 @@
-import {Link} from 'react-router-dom'
-import '../Css/error404.css'
+import { Link } from "react-router-dom";
+import "../Css/error404.css";
 
-export default function Error404 (){
-    return (
-   
-        <div className="not-found">
-            <div className="error-main">
-                <p>404:</p>
-            </div>
-            <div className="error-body">
-                <p>Oooops!You weren't supposed to see this! </p>
-            </div>
-                <div className="link-notfound">
+import { MDBBtn, MDBTypography } from "mdb-react-ui-kit";
 
-                <button type="button" className="btn btn-outline-warning"><Link to="/">Go Back to your Mama</Link></button>
-                
-                
-                </div>
-       </div>
-       
-    )
+export default function Error404() {
+  return (
+    <div className="not-found">
+      <div className="glass-card">
+      <MDBTypography tag='div' className='pb-0 error-main w-100'>
+        404
+      </MDBTypography>
+        <div className="error-body">
+          <p>Oooops!You weren't supposed to see this! </p>
+        </div>
+        <Link to="/">
+            <MDBBtn className="mb-4 px-5 w-100 custom-btn" size='lg'>Go Back</MDBBtn>
+        </Link>
+      </div>
+    </div>
+  );
 }
