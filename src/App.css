@@ -24,3 +24,13 @@
     color: #ed360d;
     font-size: 10px;
 }
+
+.profile-menu{
+    color: black;
+}
+
+.profile-menu:hover{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: #c0917f;
+}

@@ -24,7 +24,6 @@ function Navbar() {
 
   const authenticated = true;
 
-
   return (
     <MDBNavbar expand="lg" light bgColor="light">
       <MDBContainer>
@@ -51,17 +50,17 @@ function Navbar() {
             className="mr-auto mb-2 mb-lg-0"
           >
             <Link to="/shop">
-              <MDBNavbarItem>
+              <MDBNavbarItem className="nav-custom-link" active>
                 <MDBNavbarLink tag="div">Shop</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
             <Link to="/journal">
-              <MDBNavbarItem>
+              <MDBNavbarItem className="nav-custom-link">
                 <MDBNavbarLink tag="div">Journal</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
             <Link to="/contact">
-              <MDBNavbarItem>
+              <MDBNavbarItem className="nav-custom-link">
                 <MDBNavbarLink tag="div">Contact Us</MDBNavbarLink>
               </MDBNavbarItem>
             </Link>
@@ -88,41 +87,44 @@ function Navbar() {
               <MDBIcon fas icon="shopping-cart" />
             </MDBBtn>
           </Link>
-          {
-            authenticated?
+          {authenticated ? (
             <MDBDropdown>
-            <MDBDropdownToggle tag="div" color='link'>
-            <img
+              <MDBDropdownToggle tag="div" color="link">
+                <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img(31).webp"
                   className="rounded-circle"
                   height="30"
                   alt="Avatar"
                   loading="lazy"
                 />
-            </MDBDropdownToggle>
-            <MDBDropdownMenu>
-              <Link to="/profile">
-              <MDBDropdownItem link>Profile</MDBDropdownItem>
-              </Link>
-              <Link to="/login">
-                <MDBDropdownItem link>Log Out</MDBDropdownItem>
-              </Link>
-            </MDBDropdownMenu>
-          </MDBDropdown>
-            :
+              </MDBDropdownToggle>
+              <MDBDropdownMenu>
+                <MDBDropdownItem>
+                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Profile</Link>
+                </MDBDropdownItem>
+                <MDBDropdownItem>
+                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Purchase History</Link>
+                </MDBDropdownItem>
+                <MDBDropdownItem>
+                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Blogs</Link>
+                </MDBDropdownItem>
+                <MDBDropdownItem>
+                  <Link to="/login"  className="d-flex w-100 p-2 profile-menu">Log Out</Link>
+                </MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
+          ) : (
             <Link to="/login">
-            <MDBBtn
-              tag="a"
-              color="none"
-              className="mx-3"
-              style={{ color: "#B77445" }}
-            >
-              <MDBIcon fas icon="user" />
-            </MDBBtn>
-          </Link>
-          }
-
-          
+              <MDBBtn
+                tag="a"
+                color="none"
+                className="mx-3"
+                style={{ color: "#B77445" }}
+              >
+                <MDBIcon fas icon="user" />
+              </MDBBtn>
+            </Link>
+          )}
         </form>
       </MDBContainer>
     </MDBNavbar>
