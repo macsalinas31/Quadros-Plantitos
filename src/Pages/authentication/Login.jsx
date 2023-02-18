@@ -46,8 +46,8 @@ export default function Login() {
             <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
 
             <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg' onClick={handleLogin}>Login</MDBBtn>
-            <p className="small mb-5 pb-lg-3 ms-5"><Link class="text-muted" to="/forgotPassword">Forgot password?</Link></p>
-            <p className='ms-5'>Don't have an account? <Link to="/register" class="link-custom">Register here</Link></p>
+            <p className="small mb-5 pb-lg-3 ms-5"><Link className="text-muted" to="/forgotPassword">Forgot password?</Link></p>
+            <p className='ms-5'>Don't have an account? <Link to="/register" className="link-custom">Register here</Link></p>
 
           </div>
           </MDBCol>
