@@ -14,7 +14,7 @@ import Searchpage from "./Pages/Searchpage";
 import Login from "./Pages/authentication/Login";
 import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
-import ForgotPassword from "./Pages/authentication/ForgotPassword";
+import ForgotPassword from "./Pages/authentication/ForgotPassword"
 import ResetPassword from "./Pages/authentication/ResetPassword";
 import Cart from "./Pages/Shop/Cart";
 
