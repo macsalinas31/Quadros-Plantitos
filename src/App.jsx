@@ -16,6 +16,7 @@ import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
 
 import ResetPassword from "./Pages/authentication/ResetPassword";
+
 import Cart from "./Pages/Shop/Cart";
 
 // CSS import
@@ -42,6 +43,8 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/resetPassword" element={<ResetPassword />} />
+          <Route path="*" element={<Error404/>}></Route>
+          
         
         </Route>
         <Route path="*" element={<Error404 />} />
