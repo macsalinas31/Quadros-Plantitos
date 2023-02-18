@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import succ from "../assets/succ.jpg";
 import "../Css/aboutus.css";
 
+
 export default function AboutUs() {
   return (
     <MDBContainer className="p-5 my-5">
@@ -25,7 +26,7 @@ export default function AboutUs() {
 
             <div className="about__details">
               <p className="about__details-description">
-                <i className="ri-checkbox-fill about__details-icon"></i>
+                <i className="ri-checkbox-fill about__details-icon "></i>
                 We always deliver on time.
               </p>
               <p className="about__details-description">
