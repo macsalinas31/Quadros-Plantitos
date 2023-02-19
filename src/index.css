@@ -20,11 +20,11 @@
 }
 
 .custom-textarea~label {
-  color: rgba(0,0,0,.6);
+  color: rgba(0,0,0);
 }
 .custom-textarea:focus~label {
-  color: #3b71ca;
-  font-weight: 200;
+  color: #0148b9;
+  opacity: 1;
 }
 
 :root {
