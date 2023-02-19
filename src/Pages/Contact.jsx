@@ -34,6 +34,10 @@ export default function Contact() {
 
     const form = useRef();
 
+    //for validation hook-form contact us
+    const { register, handleSubmit, reset, formState:{ errors } } = useForm({resolver: yupResolver(schema)
+    });
+
     const sendEmail = (e) => {
     // e.preventDefault();
 
@@ -43,15 +47,14 @@ export default function Contact() {
       }, (error) => {
           console.log(error.text);
       });
+      reset();
   };
 
     const [staticModal, setStaticModal] = useState(false);
 
     const toggleShow = () => setStaticModal(!staticModal);
 
-    //for validation hook-form contact us
-    const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)
-    });
+
 
     // const onSubmit = data => {
     //     console.log(data);

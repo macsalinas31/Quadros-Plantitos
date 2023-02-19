@@ -48,7 +48,7 @@ export default function ForgotPassword() {
 
             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Forgot Password</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <MDBInput wrapperClass=' mx-5 w-100' label='Email address' id='formControlLg' size="lg" {...register("email")}/>
+              <MDBInput wrapperClass=' mx-5 w-100' label='Email address' id='formControlLg' size="lg" autoComplete="off" {...register("email")}/>
               <p className='form-err-msg mx-5 w-100'>{errors.email?.message}</p>
 
               <MDBBtn className="mt-2 mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
