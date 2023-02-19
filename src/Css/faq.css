@@ -295,71 +295,13 @@ the website, in dark theme
 }
 
 /*=============== HOME ===============*/
-.home{
-  padding: 3.5rem 0 2rem;
-}
 
-.home__container{
-  position: relative;
-  row-gap: 2rem;
+.fontstyle {
+    font-family: 'Poppins' sans-serif;
+    color: #3E6553;
 }
-
-.home__img{
-  width: 200px;
-  justify-self: center;
-}
-
-.home__title{
-  font-size: var(--big-font-size);
-  line-height: 140%;
-  margin-bottom: var(--mb-1);
-}
-
-.home__description{
-  margin-bottom: var(--mb-2-5);
-}
-
-.home__social{
-  position: absolute;
-  top: 2rem;
-  right: -1rem;
-  display: grid;
-  justify-items: center;
-  row-gap: 3.5rem;
-}
-
-.home__social-follow{
-  font-weight: var(--font-medium);
-  font-size: var(--smaller-font-size);
-  color: var(--first-color);
-  position: relative;
-  transform: rotate(90deg);
-}
-
-.home__social-follow::after{
-  content: '';
-  position: absolute;
-  width: 1rem;
-  height: 2px;
-  background-color: var(--first-color);
-  right: -45%;
-  top: 50%;
-}
-
-.home__social-links{
-  display: inline-flex;
-  flex-direction: column;
-  row-gap: .25rem;
-}
-
-.home__social-link{
-  font-size: 1rem;
-  color: var(--first-color);
-  transition: .3s;
-}
-
-.home__social-link:hover{
-  transform: translateX(.25rem);
+.blockquote {
+  color: #3E6553;
 }
 
 /*=============== BUTTONS ===============*/
@@ -372,6 +314,7 @@ the website, in dark theme
   font-weight: var(--font-medium);
   transition: .3s;
 }
+
 
 .button:hover{
   background-color: var(--first-color-alt);
@@ -412,10 +355,13 @@ the website, in dark theme
 
 .about__title{
   margin-bottom: var(--mb-1);
+  color: #3E6553;
+  font-family: 'Poppins', sans-serif;
 }
 
 .about__description{
   margin-bottom: var(--mb-2);
+  font-family: 'Poppins', sans-serif;
 }
 
 .about__details{
@@ -427,7 +373,7 @@ the website, in dark theme
 .about__details-description{
   display: inline-flex;
   column-gap: .5rem;
-  font-size: var(--small-font-size);
+  font-family: 'Poppins', sans-serif;
 }
 
 .about__details-icon{
@@ -446,10 +392,12 @@ the website, in dark theme
 .steps__container{
   gap: 2rem;
   padding-top: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .steps__title{
   color: #FFF;
+  font-family: 'Poppins', sans-serif;
 }
 
 .steps__card{
@@ -472,80 +420,18 @@ the website, in dark theme
 .steps__card-title{
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
+  color: #4f4f4f;
+  font-family: 'Poppins', sans-serif;
 }
 
 .steps__card-description{
   font-size: var(--small-font-size);
-  
 }
 
 .steps__card:hover .steps__card-number{
-  transform: translateY(-.25rem);
+  transform: translateY(-.30rem);
 }
 
-/*=============== PRODUCTS ===============*/
-.product__description{
-  text-align: center;
-}
-
-.product__container{
-  padding: 3rem 0;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 3rem;
-}
-
-.product__card{
-  display: grid;
-  position: relative;
-}
-
-.product__img{
-  position: relative;
-  width: 120px;
-  justify-self: center;
-  margin-bottom: var(--mb-0-75);
-  transition: .3s;
-}
-
-.product__title,
-.product__price{
-  font-size: var(--small-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-}
-
-.product__title{
-  margin-bottom: .25rem;
-}
-
-.product__button{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  color: #FFF;
-  padding: .25rem;
-  border-radius: .35rem;
-  font-size: 1.15rem;
-}
-
-.product__button:hover{
-  background-color: var(--first-color-alt);
-}
-
-.product__circle{
-  width: 90px;
-  height: 90px;
-  background-color: var(--first-color-lighten);
-  border-radius: 50%;
-  position: absolute;
-  top: 18%;
-  left: 5%;
-}
-
-.product__card:hover .product__img{
-  transform: translateY(-.5rem);
-}
 
 /*=============== QUESTIONS ===============*/
 .questions{
@@ -567,6 +453,9 @@ the website, in dark theme
   background-color: var(--container-color);
   border-radius: .25rem;
 }
+.questions__title {
+  font-weight: 600;
+}
 
 .questions__item-title{
   font-size: var(--small-font-size);
@@ -579,7 +468,7 @@ the website, in dark theme
 }
 
 .questions__description{
-  font-size: var(--smaller-font-size);
+  font-size: var(--small-font-size);
   padding: 0 1.25rem 1.25rem 2.5rem;
 }
 
@@ -607,6 +496,10 @@ the website, in dark theme
 
 .questions__item:hover{
   box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .15);
+}
+
+.accordion-button {
+  font-weight: var(--font-medium);
 }
 
 /*Rotate icon, change color of titles and background*/
@@ -976,7 +869,7 @@ the website, in dark theme
   }
 
   .about__img{
-    width: 380px;
+    width: 350px;
   }
 
   .steps__container{
@@ -984,9 +877,6 @@ the website, in dark theme
   }
   .steps__bg{
     padding: 3.5rem 2.5rem;
-  }
-  .steps__card-title{
-    font-size: var(--normal-font-size);
   }
 
   .product__description{
