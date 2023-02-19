@@ -101,26 +101,26 @@ export default function Contact() {
 
                                 <MDBModalBody>
                 
-                                    <MDBRow>
-                                        <MDBCol col='6'>
-                                        <MDBInput wrapperClass=' w-100' label='First name' type='text' autoComplete="off" name='fname' {...register("fname")}/>
-                                        <p className='form-err-msg  w-100'>{errors.fname?.message}</p>
-                                        </MDBCol>
-                                        <MDBCol col='6'>
-                                        <MDBInput wrapperClass=' w-100' label='Last name' type='text' autoComplete="off" name='lname' {...register("lname")}/>
-                                        <p className='form-err-msg  w-100'>{errors.lname?.message}</p>
-                                        </MDBCol>
-                                    </MDBRow>
+                                  <MDBRow>
+                                    <MDBCol col='6'>
+                                    <MDBInput wrapperClass=' w-100' label='First name' type='text' autoComplete="off" name='fname' {...register("fname")}/>
+                                    <p className='form-err-msg  w-100'>{errors.fname?.message}</p>
+                                    </MDBCol>
+                                    <MDBCol col='6'>
+                                    <MDBInput wrapperClass=' w-100' label='Last name' type='text' autoComplete="off" name='lname' {...register("lname")}/>
+                                    <p className='form-err-msg  w-100'>{errors.lname?.message}</p>
+                                    </MDBCol>
+                                  </MDBRow>
 
-                                    <MDBInput wrapperClass='mt-2  w-100' label='Email' id='form3' autoComplete="off" {...register("email")}/>
-                                    <p className='form-err-msg  w-100'>{errors.email?.message}</p>
-                                    
-                                    
-                                    <div className="form-floating">
-                                        <textarea className="form-control custom-textarea mt-4 w-100" id="sendmessage" name='sendmessage' style={{height: "350px"}} {...register("sendMessage")}></textarea>
-                                        <label htmlFor="sendmessage">Message</label>
-                                    </div>                                    
-                                    <p className='form-err-msg  w-100'>{errors.sendMessage?.message}</p>
+                                  <MDBInput wrapperClass='mt-2  w-100' label='Email' id='form3' autoComplete="off" {...register("email")}/>
+                                  <p className='form-err-msg  w-100'>{errors.email?.message}</p>
+                                  
+                                  
+                                  <div className="form-floating">
+                                    <textarea className="form-control custom-textarea mt-4 w-100" id="sendmessage" name='sendmessage' style={{height: "350px"}} {...register("sendMessage")}></textarea>
+                                    <label htmlFor="sendmessage">Message</label>
+                                  </div>                                    
+                                  <p className='form-err-msg  w-100'>{errors.sendMessage?.message}</p>
                                 </MDBModalBody>
                                 <MDBModalFooter  className="d-flex justify-content-center">
                                     <MDBBtn className="custom-btn px-5" color='success'>Send</MDBBtn>

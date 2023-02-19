@@ -12,8 +12,26 @@ import {
   MDBInput
 }
 from 'mdb-react-ui-kit';
+// react-hook
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object({
+  email: yup.string().email("Please provide a valid email adress.").required("Email is required")
+}).required();
 
 export default function ForgotPassword() {
+
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit = data => {
+    console.log(data);
+    alert(data);
+  }
+
   return (
     <MDBContainer fluid>
       <MDBRow>
@@ -29,12 +47,12 @@ export default function ForgotPassword() {
           <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
 
             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Forgot Password</h3>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <MDBInput wrapperClass=' mx-5 w-100' label='Email address' id='formControlLg' size="lg" {...register("email")}/>
+              <p className='form-err-msg mx-5 w-100'>{errors.email?.message}</p>
 
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-            
-
-            <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
-          
+              <MDBBtn className="mt-2 mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
+            </form>
             <p className='ms-5'> <Link to="/login" className="link-custom">Back to sign in.</Link></p>
 
           </div>

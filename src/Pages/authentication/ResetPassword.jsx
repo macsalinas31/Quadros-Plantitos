@@ -11,8 +11,25 @@ import {
   MDBInput
 }
 from 'mdb-react-ui-kit';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object({
+  oldpassword: yup.string().required("Please enter your current password"),
+  password: yup.string().required("Please enter password").min(6),
+  password2: yup.string().oneOf([yup.ref("password")], "Password did not match.").required("You need to confirm your password.")
+}).required();
 
 export default function ResetPassword() {
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit = data => {
+    console.log(data);
+    alert(data);
+  }
   return (
     <MDBContainer fluid>
       <MDBRow>
@@ -28,12 +45,17 @@ export default function ResetPassword() {
           <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
 
             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Reset Password</h3>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <MDBInput wrapperClass=' mx-5 w-100' label='Old Password' id='formControlLg' type='password' size="lg" {...register("oldpassword")}/>
+              <p className='form-err-msg mx-5 w-100'>{errors.oldpassword?.message}</p>
+              <MDBInput wrapperClass='mt-4 mx-5 w-100' label='New Password' id='formControlLg' type='password' size="lg" {...register("password")}/>
+              <p className='form-err-msg mx-5 w-100'>{errors.password?.message}</p>
+              <MDBInput wrapperClass='mt-4 mx-5 w-100' label='Confirm Password' id='formControlLg' type='password' size="lg" {...register("password2")}/>
+              <p className='form-err-msg mx-5 w-100'>{errors.password2?.message}</p>
 
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='New Password' id='formControlLg' type='password' size="lg"/>
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Confirm Password' id='formControlLg' type='password' size="lg"/>
-
-            <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Reset Password</MDBBtn>
-            <p className='ms-5'> <Link to="/login" className="link-custom">Back to sign in.</Link></p>
+              <MDBBtn className="mt-4 mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Reset Password</MDBBtn>
+            </form>
+            <p className='ms-5'> <Link to="/" className="link-custom">Back to Home.</Link></p>
           
            
           </div>

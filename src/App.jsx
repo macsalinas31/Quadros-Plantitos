@@ -14,7 +14,7 @@ import Searchpage from "./Pages/Searchpage";
 import Login from "./Pages/authentication/Login";
 import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
-
+import ForgotPassword from "./Pages/authentication/Forgotpassword"; 
 import ResetPassword from "./Pages/authentication/ResetPassword";
 
 import Cart from "./Pages/Shop/Cart";
@@ -41,7 +41,8 @@ function App() {
         <Route element={<BasicLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
           <Route path="*" element={<Error404/>}></Route>
           
