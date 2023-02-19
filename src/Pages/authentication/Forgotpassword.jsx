@@ -53,7 +53,7 @@ export default function ForgotPassword() {
 
               <MDBBtn className="mt-2 mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
             </form>
-            <p className='ms-5'> <Link to="/login" className="link-custom">Back to sign in.</Link></p>
+            <p className='ms-5'>Got your password? <Link to="/login" className="link-custom">Log In here</Link></p>
 
           </div>
           </MDBCol>
