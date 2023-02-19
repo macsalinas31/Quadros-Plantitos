@@ -1,5 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: montana;
+  src: url(./Css/Montana-Demo.otf);
+}
+
+.custom-font {
+  font-family: montana;
+  font-size: 100px;
+  color: green;
+}
+
+.custom-font2 {
+  font-family: quicksand;
+  color: green;
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 2px;
+}
+
+.custom-textarea~label {
+  color: rgba(0,0,0,.6);
+}
+.custom-textarea:focus~label {
+  color: #3b71ca;
+  font-weight: 200;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: quicksand, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
