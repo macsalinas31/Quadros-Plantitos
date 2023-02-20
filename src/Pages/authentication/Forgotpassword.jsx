@@ -1,5 +1,4 @@
 
-import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
 import { Link } from 'react-router-dom';
@@ -8,7 +7,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBInput
 }
 from 'mdb-react-ui-kit';
@@ -36,7 +34,7 @@ export default function ForgotPassword() {
 
   return (
     <MDBContainer fluid>
-      <MDBRow>
+      <MDBRow  style={{minHeight: "100vh"}}>
 
         <MDBCol sm='6'>
            

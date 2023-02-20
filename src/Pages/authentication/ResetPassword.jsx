@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
 import { Link } from 'react-router-dom';

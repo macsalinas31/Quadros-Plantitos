@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -15,14 +15,19 @@ import {
   MDBDropdownToggle,
   MDBDropdownItem,
 } from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo-weed-with.png";
 
 function Navbar() {
+  const auth = JSON.parse(localStorage.getItem('auth'));
   const [showNavRight, setShowNavRight] = useState(false);
+  const navigate = useNavigate();
 
-  const authenticated = true;
+  function logout(){
+    localStorage.clear();
+    navigate('/login');
+  }
 
   return (
     <MDBNavbar expand="lg" light bgColor="light">
@@ -87,7 +92,7 @@ function Navbar() {
               <MDBIcon fas icon="shopping-cart" />
             </MDBBtn>
           </Link>
-          {authenticated ? (
+          {auth ? (
             <MDBDropdown>
               <MDBDropdownToggle tag="div" color="link">
                 <img
@@ -102,11 +107,8 @@ function Navbar() {
                 <MDBDropdownItem>
                   <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Profile</Link>
                 </MDBDropdownItem>
-                {/* <MDBDropdownItem>
-                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Purchase History</Link>
-                </MDBDropdownItem> */}
-                <MDBDropdownItem>
-                  <Link to="/login"  className="d-flex w-100 p-2 profile-menu">Log Out</Link>
+                <MDBDropdownItem className="d-flex w-100 p-2 profile-menu" onClick={logout}>
+                  Log Out
                 </MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>

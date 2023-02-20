@@ -4,6 +4,7 @@ import profilebg from "../assets/profilebg.jpg";
 import Pulse from "@successtar/react-reveal/Pulse";
 
 export default function Profile() {
+  const auth = JSON.parse(localStorage.getItem('auth'));
   return (
     <Pulse>
     <div className="vh-100">
@@ -20,9 +21,9 @@ export default function Profile() {
                   <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img(31).webp"
                     className="rounded-circle" fluid style={{ width: '100px' }} />
                 </div>
-                <MDBTypography tag="h4" className='custom-font2'>Julie L. Arsenault</MDBTypography>
+                <MDBTypography tag="h4" className='custom-font2'>{auth?.fname} {auth?.lname}</MDBTypography>
                 <MDBCardText className="text-muted" style={{fontSize: '13px'}}>
-                  juliearsenault@plantitos.com
+                  {auth?.email}
                   {/* <span className="mx-2">|</span> <a href="#!">mdbootstrap.com</a> */}
                 </MDBCardText> 
                 <hr className='mb-4 custom-font2'/>

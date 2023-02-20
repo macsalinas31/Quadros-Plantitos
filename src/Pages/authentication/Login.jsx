@@ -1,13 +1,11 @@
 // react imports
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import axios from "../../api/axios";
-import AuthContext from "../../context/Authprovider";
 
 // assets and css
-import "../../Css/Login.css";
 import loginImage from "../../assets/succulent.jpg";
 import mainLogo from "../../assets/logo-weed-with.png";
 
@@ -40,14 +38,12 @@ const schema = yup
   })
   .required();
 
-const LOGIN_URL = '/user/auth';
+const LOGIN_URL = "/user/auth";
 export default function Login() {
   const navigate = useNavigate();
-  const { setAuth } = useContext(AuthContext);
-  const [show, setShow] = useState(true);
-
-  // const[email, setEmail] =useState("");
-  // const[pass, setPass] =useState("");
+  const location = useLocation();
+  const from = location.state?.form?.pathname || '/';
+  const [show, setShow] = useState(false);
 
   const {
     register,
@@ -58,27 +54,26 @@ export default function Login() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
-    // console.log(data);
-    try{
-      const res = await axios.post(LOGIN_URL,{data});
-      console.log(res);
-      // const roles = res?.data?.roles;
+  const onSubmit = async (credential) => {
+    console.log(credential);
+    try {
+      const res = await axios.post(LOGIN_URL, credential)
+      const userdata = res.data[0];
+      localStorage.setItem('auth', JSON.stringify(userdata))
       reset();
-      navigate("/");
-    }
-    catch(err){
-      console.log(err);
+      navigate(from, { replace: true});
+    } catch (err) {
+      setShow(true);
       reset();
     }
   };
 
   return (
     <MDBContainer fluid>
-      <MDBRow>
-        <MDBCol sm="6">
+      <MDBRow style={{minHeight: "100vh"}}>
+        <MDBCol sm="6" className="h-100">
           <MDBRow className="d-flex justify-content-center">
-            <MDBCol sm="12" lg="10" xxl="7">
+            <MDBCol sm="12" lg="10" xxl="7"  className="d-flex align-items-center flex-column">
               <div className="d-flex flex-row ps-5 pt-5 ">
                 <img
                   src={mainLogo}
@@ -87,55 +82,61 @@ export default function Login() {
                 ></img>
               </div>
 
-              <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
+              <div className="d-flex flex-column justify-content-center w-75 pt-4">
                 <h3
                   className="fw-normal mb-3 ps-5 pb-3"
                   style={{ letterSpacing: "1px" }}
                 >
                   Log in
                 </h3>
-                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-        <p>
-          Change this and that and try again. Duis mollis, est non commodo
-          luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-          Cras mattis consectetur purus sit amet fermentum.
-        </p>
-      </Alert>
+                <Alert
+                  variant="danger"
+                  onClose={() => setShow(false)}
+                  show={show}
+                  dismissible
+                  className="w-100"
+                >
+                  <Alert.Heading>Log in failed</Alert.Heading>
+                  <p>
+                    The email and password you entered did not match our records.
+                    <br/>
+                    Please double check and try again.
+                  </p>
+                </Alert>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <MDBInput
-                    wrapperClass="mt-4 mx-5 w-100 formControlLg"
+                    wrapperClass="mt-4 w-100 formControlLg"
                     label="Email address"
                     size="lg"
                     autoComplete="username"
                     {...register("email")}
                   />
-                  <p className="form-err-msg mx-5 w-100">
+                  <p className="form-err-msg w-100">
                     {errors.email?.message}
                   </p>
                   <MDBInput
-                    wrapperClass="mt-4 mx-5 w-100 formControlLg"
+                    wrapperClass="mt-4 w-100 formControlLg"
                     label="Password"
                     type="password"
                     size="lg"
                     autoComplete="current-password"
                     {...register("password")}
                   />
-                  <p className="form-err-msg mx-5 w-100">
+                  <p className="form-err-msg w-100">
                     {errors.password?.message}
                   </p>
 
-                  <MDBBtn className="mb-4 px-5 mx-5 w-100 custom-btn" size="lg">
+                  <MDBBtn className="mb-4 px-5 w-100 custom-btn" size="lg">
                     Login
                   </MDBBtn>
                 </form>
-                <p className="small mb-5 pb-lg-3 ms-5">
+                <p className="small mb-5 pb-lg-3">
                   <Link className="text-muted" to="/forgotPassword">
                     Forgot password?
                   </Link>
                 </p>
                 <p className="ms-5">
-                    Don't have an account?{" "}
+                  Don't have an account?{" "}
                   <Link to="/register" className="link-custom">
                     Register here
                   </Link>

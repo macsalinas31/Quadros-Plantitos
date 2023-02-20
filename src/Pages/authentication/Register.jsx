@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-import '../../Css/Login.css';
 import loginImage from '../../assets/succulent.jpg'
 import mainLogo from "../../assets/logo-weed-with.png"
 import {
@@ -47,7 +46,7 @@ function Register() {
 
   return (
     <MDBContainer fluid>
-      <MDBRow>
+      <MDBRow  style={{minHeight: "100vh"}}>
 
         <MDBCol sm='6'>
            
