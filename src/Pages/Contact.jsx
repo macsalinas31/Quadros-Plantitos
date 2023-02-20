@@ -131,9 +131,9 @@ export default function Contact() {
                                 </MDBModalBody>
 
                                 <MDBModalBody style={{display: success ? 'block' : 'none' }}>
-                                <Alert key='success' variant='success' className='text-center p-3'>
-                                  Your message has been sent successfully. Thank you!
-                                </Alert>
+                                  <Alert key='success' variant='success' className='text-center p-3'>
+                                    Your message has been sent successfully. Thank you!
+                                  </Alert>
                                 </MDBModalBody>
                                 <MDBModalFooter className="d-flex justify-content-center" >
                                     <MDBBtn style={{display: success ? 'none' : 'block' }} className="custom-btn px-5" color='success'>Send</MDBBtn>
