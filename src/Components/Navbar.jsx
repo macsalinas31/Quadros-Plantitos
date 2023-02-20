@@ -20,13 +20,16 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo-weed-with.png";
 
 function Navbar() {
-  const auth = JSON.parse(localStorage.getItem('auth'));
+  const auth = JSON.parse(localStorage.getItem("auth"));
   const [showNavRight, setShowNavRight] = useState(false);
   const navigate = useNavigate();
 
-  function logout(){
+  function gotoProfile() { navigate("/profile");};
+  function gotoAdmin() { navigate("/addplant");};
+
+  function logout() {
     localStorage.clear();
-    navigate('/login');
+    navigate("/login");
   }
 
   return (
@@ -104,10 +107,26 @@ function Navbar() {
                 />
               </MDBDropdownToggle>
               <MDBDropdownMenu>
-                <MDBDropdownItem>
-                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Profile</Link>
+                <MDBDropdownItem
+                  className="d-flex w-100 p-2 profile-menu"
+                  onClick={gotoProfile}
+                >
+                  Profile
                 </MDBDropdownItem>
-                <MDBDropdownItem className="d-flex w-100 p-2 profile-menu" onClick={logout}>
+                {auth.role == 0 ? (
+                  <MDBDropdownItem
+                    className="d-flex w-100 p-2 profile-menu"
+                    onClick={gotoAdmin}
+                  >
+                    Admin Panel
+                  </MDBDropdownItem>
+                ) : (
+                  ""
+                )}
+                <MDBDropdownItem
+                  className="d-flex w-100 p-2 profile-menu"
+                  onClick={logout}
+                >
                   Log Out
                 </MDBDropdownItem>
               </MDBDropdownMenu>
@@ -115,7 +134,7 @@ function Navbar() {
           ) : (
             <Link to="/login">
               <MDBBtn
-                tag="a"
+                tag="div"
                 color="none"
                 className="mx-3"
                 style={{ color: "#B77445" }}

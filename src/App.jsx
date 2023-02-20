@@ -27,7 +27,7 @@ import Cart from "./Pages/Shop/Cart";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
-import AddPlant from "./admin/AddPlant";
+import AddShopItem from "./admin/AddShopItem";
 import JournalEntry from "./Pages/JournalEntry";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
       <Routes>
         <Route element={<PrivateRoutes/>} >
           <Route element={<AdminLayout />}> 
-            <Route path="/addplant" element={<AddPlant />} />
+            <Route path="/addShop" element={<AddShopItem />} />
           </Route>
         </Route>
         <Route element={<Mainlayout />}>

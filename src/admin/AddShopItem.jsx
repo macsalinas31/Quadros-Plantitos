@@ -12,7 +12,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-function AddPlant() {
+function AddShopItem() {
   return (
     <MDBContainer fluid>
       <MDBRow className='d-flex justify-content-center align-items-center'>
@@ -39,4 +39,4 @@ function AddPlant() {
   );
 }
 
-export default AddPlant;
+export default AddShopItem;
