@@ -11,7 +11,7 @@ export default function MDBFaq() {
       </h2>
 
       <MDBAccordion className="questions__container container grid">
-        <Fade top cascade delay={200}>
+        <Fade top cascade delay={400}>
           <div className="questions__group">
             <MDBAccordionItem
               collapseId={1}
@@ -62,7 +62,7 @@ export default function MDBFaq() {
             </MDBAccordionItem>
           </div>
         </Fade>
-        <Fade top cascade delay={400}>
+        <Fade top cascade delay={600}>
           <div className="questions__group">
             <MDBAccordionItem
               collapseId={4}
