@@ -47,7 +47,7 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <Link to="#" className="button--link button--flex">
+            <Link to="/shop" className="button--link button--flex">
               Shop Now <i className="ri-arrow-right-down-line button__icon"></i>
             </Link>
           </div>

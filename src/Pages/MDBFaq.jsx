@@ -7,7 +7,7 @@ export default function MDBFaq() {
   return (
     <section className="questions section" id="faqs">
       <h2 className="section__title-center questions__title container">
-        Some common questions <br /> were often asked
+        Frequently asked questions
       </h2>
 
       <MDBAccordion className="questions__container container grid">
@@ -21,7 +21,7 @@ export default function MDBFaq() {
                   falling off or dying?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
@@ -37,7 +37,7 @@ export default function MDBFaq() {
                   leaves to become pale?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
@@ -53,7 +53,7 @@ export default function MDBFaq() {
                   crispy leaves?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
@@ -72,7 +72,7 @@ export default function MDBFaq() {
                   plant?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
@@ -88,7 +88,7 @@ export default function MDBFaq() {
                   the pots?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
@@ -104,7 +104,7 @@ export default function MDBFaq() {
                   flying around my plant?
                 </>
               }
-              className="questions__item"
+              className="questions__item shadow-5-strong"
             >
               <p className="questions__description">
                 Plants are easy way to add color energy and transform your space
