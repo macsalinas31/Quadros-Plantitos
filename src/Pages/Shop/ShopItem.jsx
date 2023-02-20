@@ -28,12 +28,19 @@ export default function ShopItem() {
 
   return (
     <MDBContainer className="p-5 my-5">
+        <MDBCol sm="12" lg="6">
+       <MDBRow className='d-flex justify-content-start'>
+            <Link to='/shop' block size="lg" className="mt-5 custom-font2">
+                ← Back To Shop
+            </Link>
+      </MDBRow>
+      </MDBCol>
       <MDBRow >
   
         <MDBCol sm="12" lg="6" className="mb-3 d-flex align-items-center justify-content-center">
         <Fade delay={200} duration={1500} left>
             <div className="d-flex justify-content-center align-items-center" style={{overflow: "hidden"}}>
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" alt="" className="about__img" />
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" alt="" className="about__img" style={{width: '100%'}} />
             </div>
             </Fade>
         </MDBCol>
@@ -53,7 +60,7 @@ export default function ShopItem() {
               <p className="about__details-description">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, consectetur. Officia, exercitationem aliquid dignissimos itaque nihil a nemo deleniti eveniet?
               </p>
-              <div className="d-flex mb-4 justify-content-center" style={{ maxWidth: "100%" }}>
+              <div className="d-flex justify-content-center" style={{ maxWidth: "100%" }}>
                             <MDBBtn className="px-3 me-2 custom-btn" onClick={decrementQuantity}>
                               <MDBIcon fas icon="minus" />
                             </MDBBtn>
@@ -67,20 +74,22 @@ export default function ShopItem() {
                             <MDBBtn className="px-3 ms-2 custom-btn" onClick={incrementQuantity}>
                               <MDBIcon fas icon="plus" />
                             </MDBBtn>
-                          </div>
+                </div>
 
                         <p className="text-start text-center">
                             Cost: <br />
                           <strong>${(17.99*quantity).toFixed(2)}</strong>
                         </p>
             </div>
-            <MDBBtn block size="lg" className="custom-btn">
-                            Go to checkout
+            <MDBBtn block size="lg" className="custom-btn mb-4">
+                            Add To Cart
             </MDBBtn>
+            
           </div>
           </Fade>
         </MDBCol>
       </MDBRow>
+      
 
     </MDBContainer>
   );
