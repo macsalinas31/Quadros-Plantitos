@@ -23,6 +23,20 @@ import React from "react";
 import "./cart.css";
 
 export default function Cart() {
+
+  const [quantity, setQuantity] = React.useState(1);
+
+  function incrementQuantity() {
+    setQuantity(quantity + 1);
+  }
+  
+  function decrementQuantity() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  
+  }
+
   return (
     <section className="h-100 gradient-custom">
       <MDBContainer className="py-5 h-100">
@@ -78,20 +92,21 @@ export default function Cart() {
                         </MDBTooltip>
                       </MDBCol>
                       <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
-                        <div
-                          className="d-flex mb-4"
-                          style={{ maxWidth: "300px" }}
-                        >
-                          <MDBBtn className="px-3 me-2 custom-btn">
-                            <MDBIcon fas icon="minus" />
-                          </MDBBtn>
-
-                          <MDBInput defaultValue={1} min={0} label="Quantity" />
-
-                          <MDBBtn className="px-3 ms-2 custom-btn">
-                            <MDBIcon fas icon="plus" />
-                          </MDBBtn>
-                        </div>
+                        <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
+                            <MDBBtn className="px-3 me-2 custom-btn" onClick={decrementQuantity}>
+                              <MDBIcon fas icon="minus" />
+                            </MDBBtn>
+                            <MDBInput
+                              value={quantity}
+                              onChange={(e) => setQuantity(Number(e.target.value))}
+                              
+                              min={1}
+                              label="Quantity"
+                              ></MDBInput>
+                            <MDBBtn className="px-3 ms-2 custom-btn" onClick={incrementQuantity}>
+                              <MDBIcon fas icon="plus" />
+                            </MDBBtn>
+                          </div>
 
                         <p className="text-start text-md-center">
                           <strong>$17.99</strong>
