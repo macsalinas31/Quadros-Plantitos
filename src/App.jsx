@@ -16,7 +16,7 @@ import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
 import ForgotPassword from "./Pages/authentication/Forgotpassword"; 
 import ResetPassword from "./Pages/authentication/ResetPassword";
-
+import Profile from "./Pages/Profile";
 import Cart from "./Pages/Shop/Cart";
 
 // CSS import
@@ -32,6 +32,7 @@ function App() {
         <Route element={<Mainlayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/journal" element={<Journal />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/searchpage" element={<Searchpage />} />
