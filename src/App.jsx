@@ -29,6 +29,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 import AddShopItem from "./admin/AddShopItem";
 import JournalEntry from "./Pages/JournalEntry";
+import ShopItem from "./Pages/Shop/ShopItem";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/journal" element={<Journal />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shopitem/:id" element={<ShopItem />} />
           <Route path="/searchpage" element={<Searchpage />} />
           <Route path="/mycart" element={<Cart />} />
           <Route path="/journalentry" element={<JournalEntry />} />

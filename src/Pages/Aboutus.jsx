@@ -20,7 +20,7 @@ export default function AboutUs() {
         <Fade delay={200} duration={1500} right>
           <div className="about__data">
             <h2 className="section__title about__title">
-              Who we really are & <br /> why choose us
+              Who We Really Are & <br /> Why Choose Us
             </h2>
 
             <p className="about__description">

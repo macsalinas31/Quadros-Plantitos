@@ -34,8 +34,6 @@ export default function Cart() {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
-
-    
   }
 
   return (
@@ -98,7 +96,7 @@ export default function Cart() {
                             <MDBBtn className="px-3 me-2 custom-btn" onClick={decrementQuantity}>
                               <MDBIcon fas icon="minus" />
                             </MDBBtn>
-                            <MDBInput
+                            <MDBInput className="text-center"
                               value={quantity}
                               onChange={(e) => setQuantity(Number(e.target.value))}
                               
