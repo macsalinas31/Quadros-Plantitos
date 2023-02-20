@@ -84,7 +84,7 @@ function Register() {
             <p className='form-err-msg mx-5 w-100'>{errors.password2?.message}</p>
 
 
-            <div className='d-flex justify-content-center mt-4 mb-2'>
+            <div className='d-flex justify-content-center mt-4 mb-2 ms-5'>
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Accept our Terms and Conditions' onChange={handlecheckTerms}/>
             </div>
             {checkTerms
