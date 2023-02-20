@@ -115,7 +115,7 @@ function Navbar() {
           ) : (
             <Link to="/login">
               <MDBBtn
-                tag="a"
+                tag="div"
                 color="none"
                 className="mx-3"
                 style={{ color: "#B77445" }}

@@ -34,12 +34,12 @@ const schema = yup.object({
 
 export default function Contact() {
     const [success, setSuccess] = useState(false);
-    const form = useRef();
+    
 
     //for validation hook-form contact us
     const { register, handleSubmit, reset, formState:{ errors } } = useForm({resolver: yupResolver(schema)
     });
-
+    const form = useRef();
     const sendEmail = (e) => {
     // e.preventDefault();
 
