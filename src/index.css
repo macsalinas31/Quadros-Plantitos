@@ -4,18 +4,24 @@
   font-family: montana;
   src: url(./Css/Montana-Demo.otf);
 }
+.custom-btn {
+  box-shadow: none;
+  background-color: #3E6553;
+  font-family: quicksand;
+  font-weight: 600;
+}
 
 .custom-font {
   font-family: montana;
   font-size: 100px;
-  color: green;
+  color: #3E6553;
 }
 
 .custom-font2 {
   font-family: quicksand;
-  color: green;
-  font-size: 20px;
-  font-weight: 500;
+  color: #3E6553;
+  font-size: 18px;
+  font-weight: 650;
   text-shadow: 2px;
 }
 

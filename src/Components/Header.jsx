@@ -10,7 +10,7 @@ export default function Header() {
       style={{
         backgroundImage: "url(" + headerImage + ")",
         height: "800px",
-        backgroundPosition: "bottom",
+        backgroundPosition: "bottom"
       }}
     >
       <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}>
@@ -19,20 +19,20 @@ export default function Header() {
           
             <MDBTypography
               tag="div"
-              className="display-3 pb-3 mb-3 border-bottom fontstyle"
+              className="display-3 mb-3 border-bottom custom-font"
             >
               Being Green,
               <br />
               Staying Clean.
             </MDBTypography>
-            <MDBTypography blockquote className="mb-3">
+            <MDBTypography blockquote className="mb-3 custom-font2">
               Plants are nature's way of showing us that great things can grow
               from small beginnings.
             </MDBTypography>
             
             <Link to="/shop">
               <MDBBtn
-                rounded
+                box
                 className="mx-2 custom-btn"
               >
                 Shop plants

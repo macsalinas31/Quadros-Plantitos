@@ -1,7 +1,4 @@
-.custom-btn {
-    box-shadow: none;
-    background-color: #B77445;
-}
+
 .custom-btn:hover, .custom-btn:focus, .custom-btn:disabled {
     box-shadow: none;
     background-color: #c0917f !important;
