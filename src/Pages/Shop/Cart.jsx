@@ -34,10 +34,12 @@ export default function Cart() {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
-  
+
+    
   }
 
   return (
+   
     <section className="h-100 gradient-custom">
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center my-4">
@@ -181,7 +183,7 @@ export default function Cart() {
                       </strong>
                     </div>
                     <span>
-                      <strong>$53.98</strong>
+                    <strong>$53.98</strong>
                     </span>
                   </MDBListGroupItem>
                 </MDBListGroup>
