@@ -1,7 +1,8 @@
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import succ from "../assets/succ.png";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
+import { Fade } from "@successtar/react-reveal";
 
 export default function AboutUs() {
   return (

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MDBBtn, MDBTypography } from "mdb-react-ui-kit";
 import headerImage from "../assets/header-image-plants.jpg";
-import Pulse from "react-reveal/Pulse";
+import Pulse from "@successtar/react-reveal/Pulse";
 export default function Header() {
   return (
     <Pulse>

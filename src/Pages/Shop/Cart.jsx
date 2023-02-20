@@ -120,7 +120,7 @@ import {
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
-                <MDBListGroup flush>
+                <MDBListGroup flush="true">
                   <MDBListGroupItem
                     className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                     Products

@@ -58,3 +58,13 @@
   background: rgb(226, 221, 221);
   border-radius: 10px;
 }
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #e9deda inset !important;
+    -webkit-text-fill-color: #773407 !important;
+}
