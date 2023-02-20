@@ -109,7 +109,7 @@ export default function Cart() {
                           </div>
 
                         <p className="text-start text-md-center">
-                          <strong>$17.99</strong>
+                          <strong>${(17.99*quantity).toFixed(2)}</strong>
                         </p>
                       </MDBCol>
                     </MDBRow>
