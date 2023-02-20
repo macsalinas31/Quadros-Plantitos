@@ -29,8 +29,8 @@ export default function ShopItem() {
   return (
     <MDBContainer className="p-5 my-5">
         <MDBCol sm="12" lg="6">
-       <MDBRow className='d-flex justify-content-start'>
-            <Link to='/shop' block size="lg" className="mt-5 custom-font2">
+       <MDBRow className='d-flex justify-content-start mb-5'>
+            <Link to='/shop' block size="lg" className="custom-font2">
                 ← Back To Shop
             </Link>
       </MDBRow>
