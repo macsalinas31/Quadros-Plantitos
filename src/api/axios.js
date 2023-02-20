@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: 'https://dhen.tech/api',
+    baseURL: 'http://localhost/q-plantitos-laravel/api',
+    // baseURL: 'https://dhen.tech/api',
     withCredentials: false,
 
 });
