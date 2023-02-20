@@ -14,8 +14,9 @@ from 'mdb-react-ui-kit';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Alert } from 'react-bootstrap';
+import emailjs from '@emailjs/browser';
 
 const schema = yup.object({
   email: yup.string().email("Please provide a valid email adress.").required("Email is required")
@@ -28,9 +29,18 @@ export default function ForgotPassword() {
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = (data)=> {
-    setSuccess(true);
-  }
+  const form = useRef();
+  const sendEmail = (e) => {
+    // e.preventDefault();
+
+    emailjs.sendForm('service_hiwec4g', 'template_2ck5d1x', form.current, 'FKuzSayL-Q2vhkqn0')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      setSuccess(true);
+  };
 
   return (
     <MDBContainer fluid>
@@ -47,7 +57,7 @@ export default function ForgotPassword() {
           <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
 
             <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Forgot Password</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form ref={form} onSubmit={handleSubmit(sendEmail)}>
               <MDBInput wrapperClass=' mx-5 w-100' label='Email address' id='formControlLg' size="lg" autoComplete="off" {...register("email")}/>
               <p className='form-err-msg mx-5 w-100'>{errors.email?.message}</p>
 
