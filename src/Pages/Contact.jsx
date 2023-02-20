@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import contact2image from "../assets/contact2image.jpg";
 import emailjs from '@emailjs/browser';
 
@@ -22,7 +22,8 @@ from 'mdb-react-ui-kit';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import '../Css/Contact.css'
+import '../Css/Contact.css';
+import { Alert } from 'react-bootstrap';
 
 const schema = yup.object({
     fname: yup.string().required("Please provide your first name"),
@@ -32,7 +33,7 @@ const schema = yup.object({
 }).required();
 
 export default function Contact() {
-
+    const [success, setSuccess] = useState(false);
     const form = useRef();
 
     //for validation hook-form contact us
@@ -48,13 +49,14 @@ export default function Contact() {
       }, (error) => {
           console.log(error.text);
       });
-      toggleShow();
+      setSuccess(true);
   };
 
     const [staticModal, setStaticModal] = useState(false);
 
     const toggleShow = () => {setStaticModal(!staticModal);
-    reset();
+      setSuccess(false);
+      reset();
     }
 
 
@@ -104,7 +106,7 @@ export default function Contact() {
 
                             <form ref={form} onSubmit={handleSubmit(sendEmail)}>
 
-                                <MDBModalBody>
+                                <MDBModalBody style={{display: success ? 'none' : 'block' }}>
                 
                                   <MDBRow>
                                     <MDBCol col='6'>
@@ -127,8 +129,14 @@ export default function Contact() {
                                   </div>                                    
                                   <p className='form-err-msg  w-100'>{errors.sendMessage?.message}</p>
                                 </MDBModalBody>
-                                <MDBModalFooter  className="d-flex justify-content-center">
-                                    <MDBBtn className="custom-btn px-5" color='success'>Send</MDBBtn>
+
+                                <MDBModalBody style={{display: success ? 'block' : 'none' }}>
+                                <Alert key='success' variant='success' className='text-center p-3'>
+                                  Your message has been sent successfully. Thank you!
+                                </Alert>
+                                </MDBModalBody>
+                                <MDBModalFooter className="d-flex justify-content-center" >
+                                    <MDBBtn style={{display: success ? 'none' : 'block' }} className="custom-btn px-5" color='success'>Send</MDBBtn>
                                 </MDBModalFooter>
                             </form>
                         </div>
