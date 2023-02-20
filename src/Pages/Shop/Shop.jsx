@@ -36,7 +36,7 @@ function Shop () {
                   fluid
                   className="w-100"
                 />
-                <Link to="#!">
+                <Link to="/shopitem/:id">
                   <div className="mask">
                     <div className="d-flex justify-content-start align-items-end h-100">
                       <h5>
