@@ -1,4 +1,4 @@
-import React from 'react';
+import Form from 'react-bootstrap/Form';
 import {
   MDBBtn,
   MDBContainer,
@@ -8,33 +8,93 @@ import {
   MDBRow,
   MDBCol,
   MDBInput,
-  // select
+  MDBRadio,
 }
 from 'mdb-react-ui-kit';
 
 function AddShopItem() {
   return (
-    <MDBContainer fluid>
-      <MDBRow className='d-flex justify-content-center align-items-center'>
-        <MDBCol lg='8'>
-          <MDBCard className='my-5 rounded-3' style={{maxWidth: '600px'}}>
-            <MDBCardImage src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp' className='w-100 rounded-top'  alt="Sample photo"/>
-            <MDBCardBody className='px-5'>
-              <h3 className="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
-              <MDBInput wrapperClass='mb-4' label='Name' id='form1' type='text'/>
-              <MDBRow>
-                <MDBCol md='6'>
-                  <MDBInput wrapperClass='datepicker mb-4' label='Select a date' id='form2' type='text'/>
-                </MDBCol>
-                <MDBCol md='6'>
-                  <MDBInput wrapperClass='mb-4' label='Registration code' id='form3' type='text'/>
-                </MDBCol>
-              </MDBRow>
-              <MDBBtn color='success' className='mb-4' size='lg'>Submit</MDBBtn>
-            </MDBCardBody>
+    <MDBContainer>
+
+      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+        <MDBCol>
+
+          <MDBCard className='my-4'>
+
+            <MDBRow className='g-0'>
+
+              <MDBCol md='6' className="d-none d-md-block">
+                <MDBCardImage src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp' alt="Sample photo" className="rounded-start" fluid/>
+              </MDBCol>
+
+              <MDBCol md='6'>
+
+                <MDBCardBody className='text-black d-flex flex-column justify-content-center'>
+                  <h3 className="mb-5 text-uppercase fw-bold">Add Item in shop</h3>
+                  <div className='d-md-flex ustify-content-start align-items-center mb-4'>
+                    <h6 className="fw-bold mb-0 me-4">Type: </h6>
+                    <MDBRadio name='inlineRadio' id='inlineRadio1' value='option1' label='Plant' inline />
+                    <MDBRadio name='inlineRadio' id='inlineRadio2' value='option2' label='Accessory' inline />
+                    <MDBRadio name='inlineRadio' id='inlineRadio3' value='option3' label='Other' inline />
+                  </div>
+                    <MDBCol md='12'>
+                      <MDBInput wrapperClass='mb-4' label='Item Name' size='lg' id='form1' type='text'/>
+                    </MDBCol>
+                    <MDBCol md='12'>
+                    <Form.Select aria-label="Default select example" className='mb-3'>
+                      <option>Category</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </Form.Select>
+                    </MDBCol>
+                    <MDBCol md='12'>
+                      <MDBInput wrapperClass='mb-4' label='Last Name' size='lg' id='form2' type='text'/>
+                    </MDBCol>
+
+                  <MDBInput wrapperClass='mb-4' label='Birthday' size='lg' id='form3' type='text'/>
+
+                  <MDBRow>
+
+                    <MDBCol md='6'>
+              
+
+                    </MDBCol>
+
+                    <MDBCol md='6'>
+                      {/* <MDBSelect
+                        className='mb-4'
+                        size='lg'
+                        data={[
+                          { text: 'City', value: 1 },
+                          { text: 'Option 1', value: 2 },
+                          { text: 'Option 2', value: 3 },
+                          { text: 'Option 3', value: 4 }
+                        ]}
+                        /> */}
+                    </MDBCol>
+
+                  </MDBRow>
+
+                  <MDBInput wrapperClass='mb-4' label='Pincode' size='lg' id='form4' type='text'/>
+                  <MDBInput wrapperClass='mb-4' label='Course' size='lg' id='form5' type='text'/>
+                  <MDBInput wrapperClass='mb-4' label='Email ID' size='lg' id='form6' type='text'/>
+
+                  <div className="d-flex justify-content-end pt-3">
+                    <MDBBtn color='light' size='lg'>Reset all</MDBBtn>
+                    <MDBBtn className='ms-2' color='warning' size='lg'>Submit form</MDBBtn>
+                  </div>
+
+                </MDBCardBody>
+
+              </MDBCol>
+            </MDBRow>
+
           </MDBCard>
+
         </MDBCol>
       </MDBRow>
+
     </MDBContainer>
   );
 }

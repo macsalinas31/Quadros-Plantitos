@@ -36,8 +36,9 @@ function App() {
     <>
       <Routes>
         <Route element={<PrivateRoutes/>} >
-          <Route element={<AdminLayout />}> 
-            <Route path="/addShop" element={<AddShopItem />} />
+          <Route element={<Mainlayout />}> 
+            <Route path="/addshopitem" element={<AddShopItem />} />
+            <Route path="/addjournal" element={<AddShopItem />} />
           </Route>
         </Route>
         <Route element={<Mainlayout />}>
