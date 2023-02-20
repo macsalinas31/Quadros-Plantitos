@@ -19,13 +19,64 @@ import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo-weed-with.png";
 
+const adminlinks = [
+  {
+    path: "/shop",
+    name: "Shop",
+    active: false,
+  },
+  {
+    path: "/addshopitem",
+    name: "Add item",
+    active: false,
+  },
+  {
+    path: "/journal",
+    name: "Journals",
+    active: false,
+  },
+  {
+    path: "/addjournal",
+    name: "Add journal",
+    active: false,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    active: false,
+  },
+];
+
+const basiclinks = [
+  {
+    path: "/shop",
+    name: "Shop",
+    active: false,
+  },
+  {
+    path: "/journal",
+    name: "Journals",
+    active: false,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    active: false,
+  },
+];
+
 function Navbar() {
   const auth = JSON.parse(localStorage.getItem("auth"));
   const [showNavRight, setShowNavRight] = useState(false);
   const navigate = useNavigate();
+  const [navlinks, setNavlinks] = useState(auth.role==0?adminlinks:basiclinks);
 
-  function gotoProfile() { navigate("/profile");};
-  function gotoAdmin() { navigate("/addplant");};
+  function gotoProfile() {
+    navigate("/profile");
+  }
+  function gotoAdmin() {
+    navigate("/addplant");
+  }
 
   function logout() {
     localStorage.clear();
@@ -34,7 +85,7 @@ function Navbar() {
 
   return (
     <MDBNavbar expand="lg" light bgColor="light">
-      <MDBContainer>
+      <MDBContainer className="d-flex justify-content-end">
         <Link to="/" className="order-1 order-lg-1">
           <MDBNavbarBrand tag="div">
             <img src={logo} height="60" alt="MDB Logo" loading="lazy" />
@@ -57,21 +108,14 @@ function Navbar() {
             fullWidth={false}
             className="mr-auto mb-2 mb-lg-0"
           >
-            <Link to="/shop">
-              <MDBNavbarItem className="nav-custom-link" active>
-                <MDBNavbarLink tag="div">Shop</MDBNavbarLink>
+            {navlinks.map((link,i) => {
+              return(
+                <Link to={link.path} key={i}>
+              <MDBNavbarItem className="nav-custom-link" active key={i}>
+                <MDBNavbarLink tag="div">{link.name}</MDBNavbarLink>
               </MDBNavbarItem>
-            </Link>
-            <Link to="/journal">
-              <MDBNavbarItem className="nav-custom-link">
-                <MDBNavbarLink tag="div">Journal</MDBNavbarLink>
-              </MDBNavbarItem>
-            </Link>
-            <Link to="/contact">
-              <MDBNavbarItem className="nav-custom-link">
-                <MDBNavbarLink tag="div">Contact Us</MDBNavbarLink>
-              </MDBNavbarItem>
-            </Link>
+              </Link>)
+            })}
           </MDBNavbarNav>
         </MDBCollapse>
         <form className="d-flex flex-nowrap input-group w-auto order-2 order-lg-4">
@@ -113,16 +157,6 @@ function Navbar() {
                 >
                   Profile
                 </MDBDropdownItem>
-                {auth.role == 0 ? (
-                  <MDBDropdownItem
-                    className="d-flex w-100 p-2 profile-menu"
-                    onClick={gotoAdmin}
-                  >
-                    Admin Panel
-                  </MDBDropdownItem>
-                ) : (
-                  ""
-                )}
                 <MDBDropdownItem
                   className="d-flex w-100 p-2 profile-menu"
                   onClick={logout}

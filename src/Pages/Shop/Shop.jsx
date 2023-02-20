@@ -15,8 +15,6 @@ import {
 
 
 function Shop () {
-
-
     return (
         <MDBContainer className="my-5 text-center">
         <h4 className="mt-4 mb-5">
