@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import axios from "../../api/axios";
+import { useEffect } from "react";
+
 import {
   MDBContainer,
   MDBRow,
@@ -11,6 +14,8 @@ import {
 
 
 function Shop () {
+
+
     return (
         <MDBContainer className="my-5 text-center">
         <h4 className="mt-4 mb-5">
