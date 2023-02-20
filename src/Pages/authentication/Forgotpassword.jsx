@@ -16,6 +16,8 @@ from 'mdb-react-ui-kit';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import { useState } from 'react';
+import { Alert } from 'react-bootstrap';
 
 const schema = yup.object({
   email: yup.string().email("Please provide a valid email adress.").required("Email is required")
@@ -23,13 +25,13 @@ const schema = yup.object({
 
 export default function ForgotPassword() {
 
+  const [success, setSuccess] = useState(false);
   const { register, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
-  const onSubmit = data => {
-    console.log(data);
-    alert(data);
+  const onSubmit = (data)=> {
+    setSuccess(true);
   }
 
   return (
@@ -53,6 +55,11 @@ export default function ForgotPassword() {
 
               <MDBBtn className="mt-2 mb-4 px-5 mx-5 w-100 custom-btn" size='lg'>Continue</MDBBtn>
             </form>
+            <div className='ms-5 w-100' style={{display: success ? 'block' : 'none' }}>
+              <Alert key='success' variant='success' className='text-center p-3'>
+              You will receive an email shortly with more information about resetting your password.
+              </Alert>
+            </div>
             <p className='ms-5'>Got your password? <Link to="/login" className="link-custom">Log In here</Link></p>
 
           </div>

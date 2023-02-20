@@ -48,12 +48,14 @@ export default function Contact() {
       }, (error) => {
           console.log(error.text);
       });
-      reset();
+      toggleShow();
   };
 
     const [staticModal, setStaticModal] = useState(false);
 
-    const toggleShow = () => setStaticModal(!staticModal);
+    const toggleShow = () => {setStaticModal(!staticModal);
+    reset();
+    }
 
 
 
@@ -94,7 +96,7 @@ export default function Contact() {
                 <MDBModalDialog centered size="lg" style={{ borderRadius: "none" }}>
                     <MDBModalContent> 
                         <MDBModalHeader className="d-flex justify-content-center">
-                            <MDBModalTitle style={{color: "green", fontFamily: 'montana', fontSize: "28px"}}>Contact Plantitos</MDBModalTitle>
+                            <MDBModalTitle style={{color: "#3E6553", fontFamily: 'montana', fontSize: "28px"}}>Contact Plantitos</MDBModalTitle>
                             <MDBBtn className='btn-close' color='none' onClick={toggleShow} style={{position: "absolute", top: "10px", right: "10px"}}></MDBBtn>
                         </MDBModalHeader>
 
