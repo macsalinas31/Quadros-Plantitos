@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -42,6 +42,7 @@ const schema = yup
   .required();
 
 function Register() {
+  const navigate = useNavigate();
   // for checkbox to see if checked or not
   const [checkTerms, setcheckTerms] = useState(false);
   const [show, setShow] = useState(false);
@@ -63,10 +64,9 @@ function Register() {
     console.log(formdata);
     try {
       const res = await axios.post(REGISTER_URL, formdata);
-      const userdata = res.data[0];
-      localStorage.setItem("auth", JSON.stringify(userdata));
+      console.log(res);
       reset();
-      navigate(from, { replace: true });
+      navigate('/login');
     } catch (err) {
       setShow(true);
     }

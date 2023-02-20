@@ -6,7 +6,7 @@ const PrivateRoutes = ({allowedRoles}) => {
     console.log(auth?.role)
 
     return(
-        auth?.role == 0
+        auth.role == 0
             ? <Outlet/>
             : <Navigate to='/unauthorized' state={{from: location}} replace />
     )
