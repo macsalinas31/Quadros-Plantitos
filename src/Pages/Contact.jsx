@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import contact2image from "../assets/contact2image.jpg";
 import emailjs from '@emailjs/browser';
+
 import {
   MDBBtn,
   MDBTypography,
@@ -84,7 +85,6 @@ export default function Contact() {
             </MDBTypography>
 
             <MDBBtn
-                rounded
                 className="mx-2 custom-btn"
                 style={{ backgroundColor: "#B77445" }}
                 onClick={toggleShow}>

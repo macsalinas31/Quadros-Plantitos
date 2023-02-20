@@ -32,7 +32,6 @@ export default function Header() {
             
             <Link to="/shop">
               <MDBBtn
-                box
                 className="mx-2 custom-btn"
               >
                 Shop plants

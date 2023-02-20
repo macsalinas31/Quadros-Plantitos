@@ -102,12 +102,9 @@ function Navbar() {
                 <MDBDropdownItem>
                   <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Profile</Link>
                 </MDBDropdownItem>
-                <MDBDropdownItem>
+                {/* <MDBDropdownItem>
                   <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Purchase History</Link>
-                </MDBDropdownItem>
-                <MDBDropdownItem>
-                  <Link to="/profile" className="d-flex w-100 p-2 profile-menu">Blogs</Link>
-                </MDBDropdownItem>
+                </MDBDropdownItem> */}
                 <MDBDropdownItem>
                   <Link to="/login"  className="d-flex w-100 p-2 profile-menu">Log Out</Link>
                 </MDBDropdownItem>
