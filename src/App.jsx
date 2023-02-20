@@ -1,8 +1,9 @@
-
 import { Routes, Route, Link } from "react-router-dom";
 
 // Layout
 import Mainlayout from "./Layouts/Mainlayout";
+import BasicLayout from "./Layouts/BasicLayout";
+import AdminLayout from "./Layouts/AdminLayout";
 
 // Pages
 import Error404 from "./Pages/Error404";
@@ -12,9 +13,8 @@ import Shop from "./Pages/Shop/Shop";
 import Home from "./Pages/Home";
 import Searchpage from "./Pages/Searchpage";
 import Login from "./Pages/authentication/Login";
-import BasicLayout from "./Layouts/BasicLayout";
 import Register from "./Pages/authentication/Register";
-import ForgotPassword from "./Pages/authentication/Forgotpassword"; 
+import ForgotPassword from "./Pages/authentication/Forgotpassword";
 import ResetPassword from "./Pages/authentication/ResetPassword";
 import Profile from "./Pages/Profile";
 import Cart from "./Pages/Shop/Cart";
@@ -23,12 +23,16 @@ import Cart from "./Pages/Shop/Cart";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
+import AddPlant from "./admin/AddPlant";
 import JournalEntry from "./Pages/JournalEntry";
 
 function App() {
   return (
     <>
       <Routes>
+        <Route element={<AdminLayout />}> 
+        <Route path="/addPlant" element={<AddPlant />} />
+        </Route>
         <Route element={<Mainlayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/journal" element={<Journal />} />
@@ -36,17 +40,15 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/searchpage" element={<Searchpage />} />
-          <Route path="/mycart" element={<Cart/>} />
-          <Route path="/journalentry" element={<JournalEntry/>}></Route>
+          <Route path="/mycart" element={<Cart />} />
+          <Route path="/journalentry" element={<JournalEntry />}></Route>
         </Route>
         <Route element={<BasicLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
-          <Route path="*" element={<Error404/>}></Route>
-          
-        
+          <Route path="*" element={<Error404 />}></Route>
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

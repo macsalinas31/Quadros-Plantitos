@@ -25,6 +25,8 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
+import { Alert } from "react-bootstrap";
+
 const schema = yup
   .object({
     email: yup
@@ -39,10 +41,10 @@ const schema = yup
   .required();
 
 const LOGIN_URL = '/user/auth';
-
 export default function Login() {
   const navigate = useNavigate();
   const { setAuth } = useContext(AuthContext);
+  const [show, setShow] = useState(true);
 
   // const[email, setEmail] =useState("");
   // const[pass, setPass] =useState("");
@@ -69,7 +71,6 @@ export default function Login() {
       console.log(err);
       reset();
     }
-    
   };
 
   return (
@@ -93,6 +94,14 @@ export default function Login() {
                 >
                   Log in
                 </h3>
+                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+        <p>
+          Change this and that and try again. Duis mollis, est non commodo
+          luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum.
+        </p>
+      </Alert>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <MDBInput
                     wrapperClass="mt-4 mx-5 w-100 formControlLg"
