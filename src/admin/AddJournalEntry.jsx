@@ -1,5 +1,6 @@
-import React from 'react';
+
 import Form from 'react-bootstrap/Form';
+import React, { useState, useRef, useEffect } from 'react';
 import { MDBFile,
          MDBBtn,
         MDBContainer,
@@ -11,9 +12,20 @@ import { MDBFile,
         MDBInput,
         MDBTextArea
 } from 'mdb-react-ui-kit';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
+const schema = yup.object({
+  imageUrl: yup.string().required("Please provide your image URL here"),
+  title: yup.string().required("Please provide the title of your journal"),
+  sendMessage: yup.string().required("A message is required")
+}).required();
 
 export default function AddJournalEntry() {
+
+  const { register, handleSubmit, reset, formState:{ errors } } = useForm({resolver: yupResolver(schema)
+  });
     return (
         <MDBContainer>
 
@@ -35,20 +47,27 @@ export default function AddJournalEntry() {
                   <div className='d-md-flex ustify-content-start align-items-center mb-1'>
                   
                   </div>
+                  <form onSubmit={handleSubmit()}>
                   <MDBCol md='12'>
-                  <MDBInput wrapperClass='mb-4' label='Image URL Here' size='lg' id='form1' type='text'/>
+                  <MDBInput wrapperClass='mt-2' label='Image URL Here' size='lg' id='form1' type='text' name='imageUrl' {...register("imageUrl")}/>
+                  <p className='form-err-msg  w-100'>{errors.imageUrl?.message}</p>
                   </MDBCol>
 
                 <MDBCol md='12'>
-                    <MDBInput wrapperClass='mb-4' label='Title' size='lg' id='form1' type='text'/>
+                    <MDBInput wrapperClass='mt-4' label='Title' size='lg' id='form1' type='text' name='title' {...register("title")} />
+                    <p className='form-err-msg  w-100'>{errors.title?.message}</p>
                 </MDBCol>
 
-                <MDBTextArea label='Message' id='textAreaExample' rows={4} />    
+                <div className="form-floating">
+                  <textarea className="form-control custom-textarea mt-4 w-100" id="sendmessage" name='sendmessage' style={{height: "350px"}} {...register("sendMessage")}></textarea>
+                  <label htmlFor="sendmessage">Message</label>
+                </div>                                    
+                <p className='form-err-msg  w-100'>{errors.sendMessage?.message}</p>   
 
                 <div className="d-flex justify-content-end pt-3">
-                <MDBBtn color='light' size='lg'>Reset all</MDBBtn>
                 <MDBBtn className='custom-btn' size='lg'>ADD</MDBBtn>
                 </div>
+                </form>
 
                 </MDBCardBody>
 
