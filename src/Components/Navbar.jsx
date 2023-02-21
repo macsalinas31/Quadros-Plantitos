@@ -69,7 +69,7 @@ function Navbar() {
   const auth = JSON.parse(localStorage.getItem("auth"));
   const [showNavRight, setShowNavRight] = useState(false);
   const navigate = useNavigate();
-  const [navlinks, setNavlinks] = useState(auth.role==0?adminlinks:basiclinks);
+  const [navlinks, setNavlinks] = useState(auth?.role==0?adminlinks:basiclinks);
 
   function gotoProfile() {
     navigate("/profile");
