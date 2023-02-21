@@ -317,16 +317,16 @@ export default function Cart() {
                   </p>
                   
                 </MDBCardBody>
-                <MDBBtn color='secondary' onClick={toggleShow}>
-                Close
-              </MDBBtn>
+                
               </MDBCard>
          
             
 
             <MDBModalFooter>
-              
-              <MDBBtn>Save changes</MDBBtn>
+            <MDBBtn color='secondary' onClick={toggleShow}>
+                Close
+              </MDBBtn>
+              <MDBBtn className="custom-btn">DONE</MDBBtn>
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>
