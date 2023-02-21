@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "../../api/axios";
-import { useEffect } from "react";
-
 
 import {
   MDBContainer,
@@ -13,259 +12,77 @@ import {
   MDBRipple,
 } from "mdb-react-ui-kit";
 
+const SHOP_URL = "/shop";
+function Shop() {
+  const [shopItems, setShopItems] = useState([]);
 
-function Shop () {
-    return (
-        <MDBContainer className="my-5 text-center">
-        <h4 className="mt-4 mb-5">
-          <strong>Bestsellers</strong>
-        </h4>
-  
-        <MDBRow>
-          <MDBCol md="12" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="/shopitem/:id">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100">
-                      <h5>
-                        <span className="badge bg-primary ms-2">New</span>
-                      </h5>
+  async function rendershop() {
+    try {
+      const res = await axios.get(SHOP_URL);
+      const shop = res.data;
+      // console.log(res);
+      setShopItems(shop);
+    } catch (err) {
+      // alert("walang laman");
+    }
+  }
+  useEffect(() => {
+    rendershop();
+  }, []);
+
+  return (
+    <MDBContainer className="my-5 text-center">
+      <h4 className="mt-4 mb-5">
+        <strong>Our Products</strong>
+      </h4>
+
+      <MDBRow>
+        {shopItems.map((item) => {
+          return (
+            <MDBCol md="12" lg="4" className="mb-4" key={item.id}>
+              <MDBCard>
+                <MDBRipple
+                  rippleColor="light"
+                  rippleTag="div"
+                  className="bg-image rounded hover-zoom"
+                >
+                  <MDBCardImage src={item.img} fluid className="w-100" />
+                  <Link to={"/shopitem/" + item.id}>
+                    <div className="mask">
+                      {/* <div className="d-flex justify-content-start align-items-end h-100">
+                        <h5>
+                          <span className="badge bg-primary ms-2">New</span>
+                        </h5>
+                      </div> */}
                     </div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">$61.99</h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="#!">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100">
-                      <h5>
-                        <span className="badge bg-success ms-2">Eco</span>
-                      </h5>
+                    <div className="hover-overlay">
+                      <div
+                        className="mask"
+                        style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                      ></div>
                     </div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">$61.99</h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="#!">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100">
-                      <h5>
-                        <span className="badge bg-danger ms-2">-10%</span>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">
-                  <s>$61.99</s>
-                  <strong className="ms-2 text-danger">$50.99</strong>
-                </h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="12" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(23).webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="#!">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100">
-                      <h5>
-                        <span className="badge bg-success ms-2">Eco</span>
-                        <span className="badge bg-danger ms-2">-10%</span>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">
-                  <s>$61.99</s>
-                  <strong className="ms-2 text-danger">$50.99</strong>
-                </h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(17).webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="#!">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100"></div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">$61.99</h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="6" lg="4" className="mb-4">
-            <MDBCard>
-              <MDBRipple
-                rippleColor="light"
-                rippleTag="div"
-                className="bg-image rounded hover-zoom"
-              >
-                <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp"
-                  fluid
-                  className="w-100"
-                />
-                <Link to="#!">
-                  <div className="mask">
-                    <div className="d-flex justify-content-start align-items-end h-100">
-                      <h5>
-                        <span className="badge bg-primary ms-2">New</span>
-                        <span className="badge bg-success ms-2">Eco</span>
-                        <span className="badge bg-danger ms-2">-10%</span>
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="hover-overlay">
-                    <div
-                      className="mask"
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                    ></div>
-                  </div>
-                </Link>
-              </MDBRipple>
-              <MDBCardBody>
-                <Link to="#!" className="text-reset">
-                  <h5 className="card-title mb-3">Product name</h5>
-                </Link>
-                <Link to="#!" className="text-reset">
-                  <p>Category</p>
-                </Link>
-                <h6 className="mb-3">
-                  <s>$61.99</s>
-                  <strong className="ms-2 text-danger">$50.99</strong>
-                </h6>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-    )
+                  </Link>
+                </MDBRipple>
+                <MDBCardBody>
+                  <Link to="#!" className="text-reset">
+                    <h5 className="card-title mb-3">{item.itemname}</h5>
+                  </Link>
+                  <Link to="#!" className="text-reset">
+                    <p>{item.category}</p>
+                  </Link>
+                  <h6 className="mb-3">
+                    {item.price.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "PHP",
+                    })}
+                  </h6>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          );
+        })}
+      </MDBRow>
+    </MDBContainer>
+  );
 }
 export default Shop;

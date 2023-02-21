@@ -27,7 +27,7 @@ const adminlinks = [
   },
   {
     path: "/addshopitem",
-    name: "Add item",
+    name: "Add product",
     active: false,
   },
   {

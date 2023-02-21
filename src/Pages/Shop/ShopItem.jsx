@@ -1,4 +1,6 @@
-import React from 'react';
+import {useParams} from "react-router-dom";
+import { useState, useEffect} from "react";
+import axios from "../../api/axios";
 import {
     MDBContainer, 
     MDBRow, 
@@ -8,12 +10,13 @@ import {
     MDBInput
 } from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom";
-// import Fade from "react-reveal/Fade";
 import { Fade } from "@successtar/react-reveal";
 
+const SHOP_URL = "/shop/";
 export default function ShopItem() {
-
-  const [quantity, setQuantity] = React.useState(1);
+  const [item, setItem] = useState([]);
+  const {id} = useParams();
+  const [quantity, setQuantity] = useState(1);
 
   function incrementQuantity() {
     setQuantity(quantity + 1);
@@ -25,12 +28,23 @@ export default function ShopItem() {
     }
   }
 
+  async function renderproduct() {
+    try {
+      const res = await axios.get(SHOP_URL + id);
+      const shop = res.data;
+      setItem(shop);
+    } catch (err) {
+    }
+  }
+  useEffect(() => {
+    renderproduct();
+  }, []);
 
   return (
     <MDBContainer className="p-5 my-5">
         <MDBCol sm="12" lg="6">
        <MDBRow className='d-flex justify-content-start mb-5'>
-            <Link to='/shop' block size="lg" className="custom-font2">
+            <Link to='/shop' block='true' size="lg" className="custom-font2">
                 ← Back To Shop
             </Link>
       </MDBRow>
@@ -40,7 +54,7 @@ export default function ShopItem() {
         <MDBCol sm="12" lg="6" className="mb-3 d-flex align-items-center justify-content-center">
         <Fade delay={200} duration={1500} left>
             <div className="d-flex justify-content-center align-items-center" style={{overflow: "hidden"}}>
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" alt="" className="about__img" style={{width: '100%'}} />
+                <img src={item.img} alt="" className="about__img" style={{width: '100%'}} />
             </div>
             </Fade>
         </MDBCol>
@@ -49,16 +63,16 @@ export default function ShopItem() {
         <Fade delay={200} duration={1500} right>
           <div className="about__data">
             <h2 className="section__title about__title">
-              Product Name
+              {item.itemname}
             </h2>
 
             <p className="about__description">
-              $20.00
+            ₱ {item.price}
             </p>
 
             <div className="about__details">
               <p className="about__details-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, consectetur. Officia, exercitationem aliquid dignissimos itaque nihil a nemo deleniti eveniet?
+                {item.description}
               </p>
               <div className="d-flex justify-content-center" style={{ maxWidth: "100%" }}>
                             <MDBBtn className="px-3 me-2 custom-btn" onClick={decrementQuantity}>
@@ -78,7 +92,8 @@ export default function ShopItem() {
 
                         <p className="text-start text-center">
                             Cost: <br />
-                          <strong>${(17.99*quantity).toFixed(2)}</strong>
+                          <strong>
+                          ₱ {(item.price*quantity).toFixed(2)}</strong>
                         </p>
             </div>
             <MDBBtn block size="lg" className="custom-btn mb-4">

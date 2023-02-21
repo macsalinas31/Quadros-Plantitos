@@ -43,9 +43,10 @@ function AddShopItem() {
                     <MDBCol md='12'>
                     <Form.Select aria-label="Default select example" className='mb-3'>
                       <option>Category</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="Accessory">Accessory</option>
+                      <option value="Echeveria">Echeveria</option>
+                      <option value="Hoya">Hoya</option>
+                      <option value="Cacti">Cacti</option>
                     </Form.Select>
                     </MDBCol>
                     <MDBCol md='12'>
