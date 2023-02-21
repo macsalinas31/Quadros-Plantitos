@@ -45,7 +45,7 @@ export default function Profile() {
         backgroundPosition: "bottom",
       }}>
         <MDBRow className="justify-content-center align-items-center h-100">
-          <MDBCol md="12" xl="4">
+          <MDBCol md="12" xl="8">
             <MDBCard style={{ borderRadius: '15px' }}>
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
@@ -116,19 +116,19 @@ export default function Profile() {
                             <form>
 
                                 <MDBModalBody style={{display: success ? 'none' : 'block' }}>
-                
+                                
                                   <MDBRow>
-                                    <MDBCol col='9'>
+                                    <MDBCol className='col-9'>
                                       <MDBInput wrapperClass=' w-100' label='Address' type='text' autoComplete="off" name='address' />
                                     </MDBCol>
-                                    <MDBCol col='3'>
-                                      <MDBInput wrapperClass=' w-100' label='Phone Number' type='number' autoComplete="off" name='phoneNumber' />
+                                    <MDBCol className='col-3'>
+                                      <MDBInput wrapperClass=' w-100' label='Phone Number' type='phone' autoComplete="off" name='phoneNumber' />
                                     </MDBCol>
                                   </MDBRow>                           
 
                                 </MDBModalBody>
                                 <MDBModalFooter className="d-flex justify-content-center" >
-                                    <MDBBtn style={{display: success ? 'none' : 'block' }} className="custom-btn px-5" color='success'>Send</MDBBtn>
+                                    <MDBBtn style={{display: success ? 'none' : 'block' }} className="custom-btn px-5" color='success'>Update</MDBBtn>
                                 </MDBModalFooter>
                             </form>
                         </div>

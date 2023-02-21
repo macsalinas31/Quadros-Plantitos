@@ -16,6 +16,7 @@ import {
   MDBDropdownItem,
 } from "mdb-react-ui-kit";
 import { Link, useNavigate } from "react-router-dom";
+import defaultprofileimg from '../assets/defaultprofileimg.png'
 
 import logo from "../assets/logo-weed-with.png";
 
@@ -143,7 +144,7 @@ function Navbar() {
             <MDBDropdown>
               <MDBDropdownToggle tag="div" color="link">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img(31).webp"
+                  src={defaultprofileimg}
                   className="rounded-circle"
                   height="30"
                   alt="Avatar"
