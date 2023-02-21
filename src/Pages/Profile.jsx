@@ -45,7 +45,7 @@ export default function Profile() {
         backgroundPosition: "bottom",
       }}>
         <MDBRow className="justify-content-center align-items-center h-100">
-          <MDBCol md="12" xl="8">
+          <MDBCol md="12" xl="10">
             <MDBCard style={{ borderRadius: '15px' }}>
               <MDBCardBody className="text-center">
                 <div className="mt-3 mb-4">
@@ -74,28 +74,64 @@ export default function Profile() {
                 </div>
                 <hr className='custom-font2'/>
                 <div className="d-flex justify-content-center align-items-center">
-                  <MDBCardText className="lead fw-normal mb-0 custom-font2">Purchase History</MDBCardText>
-                </div> <hr className='mb-4 custom-font2'/>
-                {/* <MDBRow>
-                  {/* <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                      alt="image 1" className="w-100 rounded-3" />
+                  <MDBCardText className="lead fw-normal mb-3 custom-font2">Purchase History</MDBCardText>
+                </div>
+                 <MDBRow>
+                  <MDBCol className='col-3 d-none d-lg-block'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Product Image
+                    </MDBTypography>
                   </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                      alt="image 1" className="w-100 rounded-3" />
+                  <MDBCol className='col-lg-4 col-4'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Product Description
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-1 col-2'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Quantity
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-2 col-3'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Unit Price
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-2 col-3'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Total
+                    </MDBTypography>
                   </MDBCol>
                 </MDBRow>
-                <MDBRow className="g-2">
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                      alt="image 1" className="w-100 rounded-3" />
+                <hr className='mb-4 custom-font2'/>
+                 <MDBRow className='mt-2'>
+                  <MDBCol className='col-3 d-none d-lg-block'>
+                    <MDBCardImage src="https://kellogggarden.com/wp-content/uploads/2021/06/Growing-Echeveria-Elegans.jpg"
+                      alt="image 1" className="w-50 rounded-3" />
                   </MDBCol>
-                  <MDBCol className="mb-2">
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                      alt="image 1" className="w-100 rounded-3" /> */}
-                  {/* </MDBCol>
-                </MDBRow> */}
+                  <MDBCol className='col-lg-4 col-4 d-flex align-items-center justify-content-center'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      Mexican Snowball
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-1 col-2 d-flex align-items-center justify-content-center'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      1
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-2 col-3 d-flex align-items-center justify-content-center'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      P 150.00
+                    </MDBTypography>
+                  </MDBCol>
+                  <MDBCol className='col-lg-2 col-3 d-flex align-items-center justify-content-center'>
+                    <MDBTypography style={{fontSize: '13px'}} className="mb-2 custom-font2">
+                      P 150.00
+                    </MDBTypography>
+                  </MDBCol>
+                </MDBRow>
+                <hr className='mb-4 custom-font2'/>
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
