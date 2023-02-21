@@ -210,14 +210,14 @@ export default function Cart() {
       </MDBContainer>
 
       <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
-        <MDBModalDialog size="xl">
+        <MDBModalDialog size="lg">
           <MDBModalContent>
           
        
          
               <MDBCard className="border-top border-bottom border-3 border-color-custom">
                 <MDBCardBody className="p-5">
-                  <p className="lead fw-bold mb-5" style={{ color: "#f37a27" }}>
+                  <p className="lead fw-bold mb-5" style={{ color: "#B77445" }}>
                     Purchase Receipt
                   </p>
 
@@ -257,7 +257,7 @@ export default function Cart() {
                     <MDBCol md="4" className="offset-md-8 col-lg-3 offset-lg-9">
                       <p
                         className="lead fw-bold mb-0"
-                        style={{ color: "#f37a27" }}
+                        style={{ color: "#B77445" }}
                       >
                         £262.99
                       </p>
@@ -266,7 +266,7 @@ export default function Cart() {
 
                   <p
                     className="lead fw-bold mb-4 pb-2"
-                    style={{ color: "#f37a27" }}
+                    style={{ color: "#B77445" }}
                   >
                     Tracking Order
                   </p>
@@ -278,7 +278,7 @@ export default function Cart() {
                           <li className="list-inline-item items-list">
                             <p
                               className="py-1 px-2 rounded text-white"
-                              style={{ backgroundColor: "#f37a27" }}
+                              style={{ backgroundColor: "#B77445" }}
                             >
                               Ordered
                             </p>
@@ -286,7 +286,7 @@ export default function Cart() {
                           <li className="list-inline-item items-list">
                             <p
                               className="py-1 px-2 rounded text-white"
-                              style={{ backgroundColor: "#f37a27" }}
+                              style={{ backgroundColor: "#B77445" }}
                             >
                               Shipped
                             </p>
@@ -294,7 +294,7 @@ export default function Cart() {
                           <li className="list-inline-item items-list">
                             <p
                               className="py-1 px-2 rounded text-white"
-                              style={{ backgroundColor: "#f37a27" }}
+                              style={{ backgroundColor: "#B77445" }}
                             >
                               On the way
                             </p>
@@ -311,7 +311,7 @@ export default function Cart() {
                   </MDBRow>
                   <p className="mt-4 pt-2 mb-0">
                     Want any help?{" "}
-                    <a href="#!" style={{ color: "#f37a27" }}>
+                    <a href="#!" style={{ color: "#B77445" }}>
                       Please contact us
                     </a>
                   </p>

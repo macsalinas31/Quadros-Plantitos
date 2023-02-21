@@ -28,6 +28,7 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 import AddShopItem from "./admin/AddShopItem";
+import AddJournalEntry from "./admin/AddJournalEntry";
 import JournalEntry from "./Pages/JournalEntry";
 import ShopItem from "./Pages/Shop/ShopItem";
 
@@ -38,7 +39,7 @@ function App() {
         <Route element={<PrivateRoutes/>} >
           <Route element={<Mainlayout />}> 
             <Route path="/addshopitem" element={<AddShopItem />} />
-            <Route path="/addjournal" element={<AddShopItem />} />
+            <Route path="/addjournal" element={<AddJournalEntry />} />
           </Route>
         </Route>
         <Route element={<Mainlayout />}>
