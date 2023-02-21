@@ -120,16 +120,7 @@ function Navbar() {
           </MDBNavbarNav>
         </MDBCollapse>
         <form className="d-flex flex-nowrap input-group w-auto order-2 order-lg-4">
-          <Link to="/searchpage">
-            <MDBBtn
-              tag="div"
-              color="none"
-              className="mx-3"
-              style={{ color: "#B77445", margin: "0px 20px" }}
-            >
-              <MDBIcon fas icon="search" />
-            </MDBBtn>
-          </Link>
+      
           <Link to="/mycart">
             <MDBBtn
               tag="div"
